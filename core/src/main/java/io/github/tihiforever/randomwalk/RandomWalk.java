@@ -133,16 +133,7 @@ public class RandomWalk extends ApplicationAdapter {
             float x2 = path[i][0];
             float y2 = path[i][1];
 
-            if (mode == Mode.CURVED_TORUS) {
-                // Gradient color based on theta
-                float twoPi = (float)(2 * Math.PI);
-                float t1 = (path[i - 1][1] / Gdx.graphics.getHeight()); // normalized 0-1
-                float t2 = (path[i][1] / Gdx.graphics.getHeight());
-                Color color = new Color(t1, 0f, 1f - t1, 1f); // blue→red gradient
-                shapeRenderer.setColor(color);
-            } else {
-                shapeRenderer.setColor(Color.WHITE);
-            }
+            shapeRenderer.setColor(Color.WHITE);
 
             float dx = Math.abs(x2 - x1);
             float dy = Math.abs(y2 - y1);
@@ -150,10 +141,6 @@ public class RandomWalk extends ApplicationAdapter {
             if (dx > Gdx.graphics.getWidth() / 2f || dy > Gdx.graphics.getHeight() / 2f) {
                 continue; // skip this line
             }
-
-            shapeRenderer.line(x1, y1, x2, y2);
-
-            shapeRenderer.line(x1, y1, x2, y2);
 
             shapeRenderer.line(x1, y1, x2, y2);
         }
