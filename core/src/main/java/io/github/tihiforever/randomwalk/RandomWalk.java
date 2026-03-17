@@ -130,7 +130,7 @@ public class RandomWalk extends ApplicationAdapter {
         for (int i = 1; i < stepCount; i++) {
             float x1 = path[i - 1][0];
             float y1 = path[i - 1][1];
-            float x2 = path[i][0];
+            float x2 =  path[i][0];
             float y2 = path[i][1];
 
             shapeRenderer.setColor(Color.WHITE);
