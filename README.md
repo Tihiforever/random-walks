@@ -8,12 +8,15 @@ An exploration of Random Walks and how they are used and can be manipulated.
 
 11/03/26: finished everything outlined, waiting for a response as to what to do next, as I have visualised random walking on a 3d torus, but it doesn’t work truly as the walker can go inside the torus wich I visualised in Desmos (here https://www.desmos.com/3d/j2sfzxhzr9)
 
-17/03/26: Had a discussion on Microsoft Teams explaining my work and the basics of a random walk, and how it is utilised like in modelling gas particles in phyiscs as taking the walker to be a particle in a gas, it moves around randomly. We also discussed how a random walk in 1D follows a binomial distribution and, after an infinite number of steps, approaches a normal distribution. After this, we discussed what to do next, where it was decided to record lots of random walkers and their distances from an origin and then plot this data relative to the number of steps taken and explore the trend and how the number of steps correlates to the distance from the origin. Then we discuss ed comparing this infinite plane to a bounded 2d torus and how the distance from the start changes when the walker can "loop" around and being able to graph this to compare the difference.
+17/03/26: Had a discussion on Microsoft Teams explaining my work and the basics of a random walk, and how it is utilised, like in modelling gas particles in phyiscs as taking the walker to be a particle in a gas, it moves around randomly. We also discussed how a random walk in 1D follows a binomial distribution and, after an infinite number of steps, approaches a normal distribution. After this, we discussed what to do next, where it was decided to record lots of random walkers and their distances from an origin and then plot this data relative to the number of steps taken and explore the trend and how the number of steps correlates to the distance from the origin. Then we discuss ed comparing this infinite plane to a bounded 2d torus and how the distance from the start changes when the walker can "loop" around and be able to graph this to compare the difference.
 
+# Self exploration
+I have discovered a love for geometry and topology and how distances are affected on curved surfaces. This then led me to research how random walks are used in different dimensions, such as 1d, and how over a infinte number of steps or a large number of steps the walker forms a binomial distribution and then for a infinte number of steps across n distances on a 1d plane forms a normal distribution. When exploring random walking in 2D
 
 # Sources
 https://en.wikipedia.org/wiki/Random_walk
 https://en.wikipedia.org/wiki/Torus
 https://mathworld.wolfram.com/Torus.html
 https://math.uchicago.edu/~may/REU2024/REUPapers/Courbe.pdf
+https://community.wolfram.com/groups/-/m/t/82377
 https://math.stackexchange.com/questions/1578756/parameterization-of-a-torus
