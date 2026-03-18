@@ -10,6 +10,18 @@ An exploration of Random Walks and how they are used and can be manipulated.
 
 17/03/26: Had a discussion on Microsoft Teams explaining my work and the basics of a random walk, and how it is utilised, like in modelling gas particles in phyiscs as taking the walker to be a particle in a gas, it moves around randomly. We also discussed how a random walk in 1D follows a binomial distribution and, after an infinite number of steps, approaches a normal distribution. After this, we discussed what to do next, where it was decided to record lots of random walkers and their distances from an origin and then plot this data relative to the number of steps taken and explore the trend and how the number of steps correlates to the distance from the origin. Then we discuss ed comparing this infinite plane to a bounded 2d torus and how the distance from the start changes when the walker can "loop" around and be able to graph this to compare the difference.
 
+# To-Do:
+-build another random walk:
+  -that can run multiple walks with a set n amount of steps or be able to run forever and run till an input is pressed.
+  -be able to record the distance from the origin and write it into a file
+  -allow the random walk tp un bounded
+-then graph it using the created CSV files and create heatmaps and graphs
+
+-then do the same thing but with a bounded torus and compare to an unbounded 2d plane and different sizes of the grid of the bounded torus and compare results, more heatmaps, more graphs, more write-ups.
+
+-after finishing all of that, try to figure out how distances change on curved surfaces and compare the distance from an orgin so the same stuff just on curved surfaces.
+
+
 # Self exploration
 I have discovered a love for geometry and topology, and how distances are affected on curved surfaces. This then led me to research how random walks are used in different dimensions, such as 1d, and how over a infinte number of steps or a large number of steps the walker forms a binomial distribution and then for a infinte number of steps across n distances on a 1d plane forms a normal distribution. When exploring random walking in 2D, I discovered the representation of pi as a random walk and how it changes when the length of pi changes, along with the base of pi changing and then the difference between using mod 4 and not.
 
