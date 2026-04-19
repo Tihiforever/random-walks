@@ -6,31 +6,29 @@ An exploration of Random Walks and how they are used and can be manipulated.
 
 ## Work Log
 
-**09/02/26:** We decided that I would program a random walk 2d generator, after halftime, to discuss on a Microsoft Teams call what else can be added and done.
+**09/02/26:** We decided that I would program a random walk 2D generator, after halfterm to discuss on a Microsoft Teams call what else can be added and done.
 
-**10/02/26:** Created my git repository and thought about the design of it and after a short discussion with my maths teacher he suggested I learn polar coordinates and that made me think about how this project is like an ant walking on a piece of paper that is twisted in lots of different ways — as that's how random walking in a 2d shape is, as the 2d grid when in a non Euclidian form allows for different rules of shapes when a 2d plane is twisted and stretched in a 3d or a higher dimension, like how some scientists think the universe is. This allowed me to think about how I would program this.
+**10/02/26:** Created my git repository and thought about the design of it and after a short discussion with my maths teacher he suggested I learn polar coordinates and that made me think about how this project is like an ant walking on a piece of paper that is twisted in lots of different ways — as that's how random walking in a 2D shape is, as the 2D grid when in a non-Euclidean form allows for different rules of shapes when a 2D plane is twisted and stretched in a 3D or higher dimension, like how some scientists think the universe is. This allowed me to think about how I would program this.
 
-**11/03/26:** Finished everything outlined, waiting for a response as to what to do next. I have visualised random walking on a 3d torus, but it doesn't work truly as the walker can go inside the torus, which I visualised in Desmos ([here](https://www.desmos.com/3d/j2sfzxhzr9)).
+**11/03/26:** Finished everything outlined, waiting for a response as to what to do next. I have visualised random walking on a 3D torus, but it doesn't work truly as the walker can go inside the torus, which I visualised in Desmos ([here](https://www.desmos.com/3d/j2sfzxhzr9)).
 
-**17/03/26:** Had a discussion on Microsoft Teams explaining my work and the basics of a random walk, and how it is utilised, like in modelling gas particles in physics — taking the walker to be a particle in a gas, it moves around randomly. We also discussed how a random walk in 1D follows a binomial distribution and, after an infinite number of steps, approaches a normal distribution. After this, we discussed what to do next, where it was decided to record lots of random walkers and their distances from an origin and then plot this data relative to the number of steps taken and explore the trend and how the number of steps correlates to the distance from the origin. Then we discussed comparing this infinite plane to a bounded 2d torus and how the distance from the start changes when the walker can "loop" around, and graphing this to compare the difference.
+**17/03/26:** Had a discussion on Microsoft Teams explaining my work and the basics of a random walk, and how it is utilised, like in modelling gas particles in physics — taking the walker to be a particle in a gas, it moves around randomly. We also discussed how a random walk in 1D follows a binomial distribution and, after an infinite number of steps, approaches a normal distribution. After this, we discussed what to do next, where it was decided to record lots of random walkers and their distances from an origin and then plot this data relative to the number of steps taken and explore the trend and how the number of steps correlates to the distance from the origin. Then we discussed comparing this infinite plane to a bounded 2D torus and how the distance from the start changes when the walker can "loop" around, and graphing this to compare the difference.
 
 **23/03/26:** Created a second visualisation that allowed more customisability like adding extra walkers and changing step size, along with changing the number of steps it can complete. Annoyingly, I can't upload the files, only screenshots, as this GitHub repo is set to the first prototype and idk how to change it, but I will try to fix this.
 
-| | | |
-|---|---|---|
-| ![image](https://github.com/user-attachments/assets/c1bcbf98-a538-48df-b94e-eea0567dbedf) | ![image](https://github.com/user-attachments/assets/27c59b96-e5f9-4c8f-8094-127d4138f170) | ![image](https://github.com/user-attachments/assets/c1bcbf98-a538-48df-b94e-eea0567dbedf) | 
-
+| | |
+|---|---|
+| ![image](https://github.com/user-attachments/assets/c1bcbf98-a538-48df-b94e-eea0567dbedf) | ![image](https://github.com/user-attachments/assets/27c59b96-e5f9-4c8f-8094-127d4138f170) |
 
 https://github.com/user-attachments/assets/a894a74e-201b-47da-bbde-043958e76675
 
-**18/04/26:** Built a dedicated data collection simulator that could be changed for the number of steps and the number of walkers, exporting a CSV per walker with step, x, y, and distance from origin. Positions are normalised, so the origin is always (0, 0) and the step size is always 1 unit regardless of pixel size, making data from different runs directly comparable. I also started building the Python script that would visualise all of the data collected. Shown below is how long it took to simulate the largest dataset of 1000 walkers and 10000 steps. Then, an example of how the newest model looks with 100 walkers and 100 steps.
+**18/04/26:** Built a dedicated data collection simulator that could be configured for the number of steps and walkers, exporting a CSV per walker with step, x, y, and distance from origin. Positions are normalised so the origin is always (0, 0) and step size is always 1 unit regardless of pixel size, making data from different runs directly comparable. Also started building the Python script to visualise all collected data. Shown below is the 1000 walker, 10000 step simulation completing, and an example of the newer visualiser with 100 walkers and 100 steps.
 
 | | |
 |---|---|
 | ![image](https://github.com/user-attachments/assets/021205e1-d7e6-471c-9b50-6504b26c1546) | ![image](https://github.com/user-attachments/assets/ceb19982-2f55-4758-b4b1-de1d8ad539b4) |
 
-
-**19/04/2026:** I used a Python script that could compile all of the data collected and generate graphs of all the data, making it easier to visualise. I also finished making the README look nice and uploading this to GitHub Pages.
+**19/04/26:** Used a Python script to compile all collected data and generate graphs, making it easier to visualise. Finished making the README look nice and uploaded everything to GitHub Pages.
 
 ---
 
@@ -51,7 +49,9 @@ https://github.com/user-attachments/assets/a894a74e-201b-47da-bbde-043958e76675
 
 ## Self Exploration
 
-I have discovered a love for geometry and topology, and how distances are affected on curved surfaces. This then led me to research how random walks are used in different dimensions, such as 1D, and how over an infinite number of steps or a large number of steps the walker forms a binomial distribution and then for an infinite number of steps across n distances on a 1D plane forms a normal distribution. When exploring random walking in 2D, I discovered the representation of pi as a random walk and how it changes when the length of pi changes, along with the base of pi changing and then the difference between using mod 4 and not.
+I have discovered a love for geometry and topology, and how distances are affected on curved surfaces. This led me to research how random walks are used in different dimensions — in 1D, over a large number of steps the walker forms a binomial distribution, which approaches a normal distribution over an infinite number of steps.
+
+When exploring random walking in 2D, I discovered the representation of pi as a random walk and how it changes when the length of pi changes, the base of pi changing, and the difference between using mod 4 and not.
 
 | | |
 |---|---|
@@ -62,7 +62,11 @@ I have discovered a love for geometry and topology, and how distances are affect
 
 https://github.com/user-attachments/assets/a570904e-4ef5-4def-ab40-8af0d44794f6
 
-These examples helped me explore random walks and learn how to visualise them, which is piquing my interest in the topic further and aiding my continued exploration and comparison of random walks and topology.
+Thinking about what different surfaces a random walker could move on led me naturally into geometry. A football is a great example of this — it is covered by pentagons and hexagons stitched together, which is actually a truncated icosahedron, one of the 13 [Archimedean solids](https://en.wikipedia.org/wiki/Archimedean_solid). Archimedean solids are convex polyhedra whose faces are regular polygons and whose vertices are all identical — in 3D, the football's surface is a finite tiling of two polygon types. This made me think about what happens when you flatten that idea out onto an infinite plane.
+
+This led me to [Euclidean tilings by convex regular polygons](https://en.wikipedia.org/wiki/Euclidean_tilings_by_convex_regular_polygons). There are only 3 regular tilings of the plane (where every tile is the same regular polygon): the triangular (3⁶), square (4⁴), and hexagonal (6³) tilings. Beyond those, there are 8 semiregular or Archimedean tilings — using two or more types of regular polygons but with every vertex identical. The hexagonal tiling is particularly interesting because it is the most efficient way to divide a plane into equal areas with the least perimeter, which is why honeycombs use it. A random walker on a triangular tiling has 6 neighbours at each vertex, on a square tiling has 4, and on a hexagonal tiling has only 3 — and that difference in vertex degree directly changes how quickly the walker can spread out, which is exactly what this project investigates.
+
+From tilings I then discovered [tessellations](https://en.wikipedia.org/wiki/Tessellation) more broadly — the covering of a surface using one or more geometric shapes with no gaps or overlaps. Tessellations extend far beyond regular polygons into aperiodic tilings like Penrose tilings, which never repeat but still fill the plane perfectly, and into hyperbolic geometry where the rules of Euclidean space no longer apply. This opened up the question of what a random walk looks like on a non-repeating or hyperbolic surface, which feeds directly into the later stages of this project.
 
 ---
 
@@ -100,9 +104,23 @@ The mean consistently sits slightly below √n — this is expected as distance 
 
 ---
 
+## Overall Data Summary
+
+The three plots below show all five runs together. The combined line graph shows every run following the same √n curve regardless of step count. The two scatter plots show the average distance per run with ±1 standard deviation error bars — the first using only the final step distance, the second averaging across all steps.
+
+| Combined line — all runs | Average final distance per run |
+|--------------------------|-------------------------------|
+| ![image]("https://github.com/user-attachments/assets/da7348ff-809d-4d8e-9334-6e54512e74d9") | ![image]("https://github.com/user-attachments/assets/ac6d1645-4283-4b24-b4de-893da2be4bf3") |
+
+| Average distance across all steps per run |
+|------------------------------------------|
+| ![image]("https://github.com/user-attachments/assets/cdcfce9a-c65c-4b75-92de-668501034f90") |
+
+---
+
 ## Average Distance vs Steps
 
-The average distance grows as a smooth √n curve in all five runs. The blue line is the simulation data, and the dashed line is the √n reference.
+The average distance grows as a smooth √n curve in all five runs. The blue line is the simulation data and the dashed line is the √n reference.
 
 | 100 steps | 500 steps |
 |-----------|-----------|
@@ -110,21 +128,21 @@ The average distance grows as a smooth √n curve in all five runs. The blue lin
 
 | 1000 steps | 5000 steps | 10000 steps |
 |------------|------------|-------------|
-| ![](https://github.com/user-attachments/assets/541738ae-db8b-4071-b0a9-dc59272c5413") | ![]("https://github.com/user-attachments/assets/47f6c7af-624f-4ff1-8097-e6086677e66d") | ![]("https://github.com/user-attachments/assets/7d06e99a-adf9-4ec9-be4e-b6c4e6f38ba3") |
+| ![image](https://github.com/user-attachments/assets/541738ae-db8b-4071-b0a9-dc59272c5413) | ![image](https://github.com/user-attachments/assets/47f6c7af-624f-4ff1-8097-e6086677e66d) | ![image](https://github.com/user-attachments/assets/7d06e99a-adf9-4ec9-be4e-b6c4e6f38ba3) |
 
 ---
 
 ## Log-Log Plots
 
-A straight line with a gradient of 0.5 on a log-log plot is the mathematical proof of √n growth.
+A straight line with gradient 0.5 on a log-log plot is the mathematical proof of √n growth.
 
 | 100 steps | 500 steps |
 |-----------|-----------|
-| ![](https://github.com/user-attachments/assets/INSERT_100_LOGLOG) | ![](https://github.com/user-attachments/assets/INSERT_500_LOGLOG) |
+| ![image](https://github.com/user-attachments/assets/9a651942-d1f4-4af7-918b-0aa223be16eb) | ![image](https://github.com/user-attachments/assets/560606ee-a11a-4c85-bd02-ae03fcab2308) |
 
 | 1000 steps | 5000 steps | 10000 steps |
 |------------|------------|-------------|
-| ![](https://github.com/user-attachments/assets/INSERT_1000_LOGLOG) | ![](https://github.com/user-attachments/assets/INSERT_5000_LOGLOG) | ![](https://github.com/user-attachments/assets/INSERT_10000_LOGLOG) |
+| ![image](https://github.com/user-attachments/assets/67249730-5c0b-40af-8069-dcf8856b824e) | ![image](https://github.com/user-attachments/assets/a7147b2a-f160-46ba-a573-3b25a91de88d) | ![image](https://github.com/user-attachments/assets/3d8d1e66-b003-47f1-8fc3-cab28efe4df8) |
 
 ---
 
@@ -134,11 +152,11 @@ The final distances follow a right-skewed distribution in all runs, with the pea
 
 | 100 steps | 500 steps |
 |-----------|-----------|
-| ![](https://github.com/user-attachments/assets/INSERT_100_DIST) | ![](https://github.com/user-attachments/assets/INSERT_500_DIST) |
+| ![image](https://github.com/user-attachments/assets/d9a72f8e-5f88-4d83-8690-fe6011a9931c) | ![image](https://github.com/user-attachments/assets/072a0576-a6f5-49fd-a4da-be9ef4ed818f) |
 
 | 1000 steps | 5000 steps | 10000 steps |
 |------------|------------|-------------|
-| ![](https://github.com/user-attachments/assets/INSERT_1000_DIST) | ![](https://github.com/user-attachments/assets/INSERT_5000_DIST) | ![](https://github.com/user-attachments/assets/INSERT_10000_DIST) |
+| ![image](https://github.com/user-attachments/assets/99cd7196-f687-4b0a-a26a-7201d8c84213) | ![image](https://github.com/user-attachments/assets/29aada13-3724-496d-86d9-4875ef88b30c) | ![image](https://github.com/user-attachments/assets/8bbeeb1a-8450-4451-8d78-46ec888a28f5) |
 
 ---
 
@@ -148,11 +166,11 @@ The density of final positions forms a radially symmetric blob centred on the or
 
 | 100 steps | 500 steps |
 |-----------|-----------|
-| ![](https://github.com/user-attachments/assets/INSERT_100_HEAT) | ![](https://github.com/user-attachments/assets/INSERT_500_HEAT) |
+| ![image](https://github.com/user-attachments/assets/d9dada0f-1087-4529-a7c1-e66f7d43f82b) | ![image](https://github.com/user-attachments/assets/3de8755d-29b7-4d79-acd8-55d49e6d50b0) |
 
 | 1000 steps | 5000 steps | 10000 steps |
 |------------|------------|-------------|
-| ![](https://github.com/user-attachments/assets/INSERT_1000_HEAT) | ![](https://github.com/user-attachments/assets/INSERT_5000_HEAT) | ![](https://github.com/user-attachments/assets/INSERT_10000_HEAT) |
+| ![image](https://github.com/user-attachments/assets/2fbc3f26-231f-45db-8653-d9547e8ef1d6) | ![image](https://github.com/user-attachments/assets/5af32c77-e565-44b4-a55b-ecb3610e1734) | ![image](https://github.com/user-attachments/assets/311b0df7-da3b-4a2d-9b2f-2d649037ad2c) |
 
 ---
 
@@ -172,10 +190,16 @@ This serves as the **baseline** for comparison against the bounded 2D torus, whe
 
 - [Wikipedia — Random Walk](https://en.wikipedia.org/wiki/Random_walk)
 - [Wikipedia — Torus](https://en.wikipedia.org/wiki/Torus)
+- [Wikipedia — Euclidean Tilings by Convex Regular Polygons](https://en.wikipedia.org/wiki/Euclidean_tilings_by_convex_regular_polygons)
+- [Wikipedia — Archimedean Solid](https://en.wikipedia.org/wiki/Archimedean_solid)
+- [Wikipedia — Tessellation](https://en.wikipedia.org/wiki/Tessellation)
 - [Wolfram MathWorld — Torus](https://mathworld.wolfram.com/Torus.html)
+- [Wolfram MathWorld — Tessellation](https://mathworld.wolfram.com/Tessellation.html)
+- [Wolfram MathWorld — Semiregular Tessellation](https://mathworld.wolfram.com/SemiregularTessellation.html)
 - [REU Paper — Courbe](https://math.uchicago.edu/~may/REU2024/REUPapers/Courbe.pdf)
 - [Wolfram Community](https://community.wolfram.com/groups/-/m/t/82377)
 - [Math StackExchange — Parameterization of a Torus](https://math.stackexchange.com/questions/1578756/parameterization-of-a-torus)
+- [Math StackExchange — Expected Value of Random Walk](https://math.stackexchange.com/questions/103142/expected-value-of-random-walk)
 - [Wired — Pi as a Random Walk](https://www.wired.com/2017/03/hey-can-find-pi-random-walk-heres/)
 - [Wolfram Demonstrations — Random Walk from Digits of Pi](https://demonstrations.wolfram.com/RandomWalkGeneratedByTheDigitsOfPi/)
-- [Math StackExchange — Expected Value of Random Walk](https://math.stackexchange.com/questions/103142/expected-value-of-random-walk)
+- [Grünbaum & Shephard — Tilings by Regular Polygons (1977)](https://doi.org/10.2307/2689529)
