@@ -23,11 +23,16 @@ An exploration of Random Walks and how they are used and can be manipulated.
 <video src="https://github.com/user-attachments/assets/a894a74e-201b-47da-bbde-043958e76675" controls width="100%" muted autoplay>
 </video>
 
+
 **18/04/26:** Built a dedicated data collection simulator that could be configured for the number of steps and walkers, exporting a CSV per walker with step, x, y, and distance from origin. Positions are normalised so the origin is always (0, 0) and step size is always 1 unit regardless of pixel size, making data from different runs directly comparable. Also started building the Python script to visualise all collected data. Shown below is the 1000 walker, 10000 step simulation completing, and an example of the newer visualiser with 100 walkers and 100 steps.
 
 | | |
 |---|---|
 | ![image](https://github.com/user-attachments/assets/021205e1-d7e6-471c-9b50-6504b26c1546) | ![image](https://github.com/user-attachments/assets/ceb19982-2f55-4758-b4b1-de1d8ad539b4) |
+
+<video src="https://github.com/user-attachments/assets/c6406bc6-54a2-444c-830b-aaab9d1bed41" controls width="100%" muted autoplay>
+</video>
+
 
 **19/04/26:** Used a Python script to compile all collected data and generate graphs, making it easier to visualise. Finished making the README look nice and uploaded everything to GitHub Pages.
 
