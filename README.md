@@ -116,16 +116,19 @@ The mean consistently sits slightly below √n, this is expected as distance is 
 
 The three plots below show all five runs together. The combined line graph shows every run following the same √n curve regardless of step count. The two scatter plots show the average distance per run with ±1 standard deviation error bars, with the first using only the final step distance and the second averaging across all steps.
 
-| Combined line — all runs | Average final distance per run |
-|--------------------------|-------------------------------|
+| Combined line — all runs |
+|--------------------------|
 | <img width="1500" height="900" alt="combined_line" src="https://github.com/user-attachments/assets/ae12294c-18bc-4994-a3a2-5cd6c419d771" />
- | <img width="1500" height="900" alt="combined_scatter_final" src="https://github.com/user-attachments/assets/a6c83f84-07fb-4269-b1d2-ff21312c68f4" />
- |
+
+| Average final distance per run |
+|------------------------------------------|
+| <img width="1500" height="900" alt="combined_scatter_final" src="https://github.com/user-attachments/assets/a6c83f84-07fb-4269-b1d2-ff21312c68f4" />
+ 
 
 | Average distance across all steps per run |
 |------------------------------------------|
 | <img width="1500" height="900" alt="combined_scatter_overall" src="https://github.com/user-attachments/assets/ebe65b2d-d8f6-4fdc-8c25-af46e14be1a7" />
- |
+ 
 
 ---
 
