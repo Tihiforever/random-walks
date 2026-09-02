@@ -787,7 +787,7 @@ Having established how the average distance changes with both the number of step
 For an unbounded two-dimensional random walk, the expected distance from the origin follows approximately
 
 \[
-r \propto \sqrt{n},
+r\propto\sqrt{n},
 \]
 
 where \(r\) is the average distance from the origin and \(n\) is the number of steps. This can be written as
@@ -806,45 +806,231 @@ r=f(n,L),
 
 where \(L\) is the torus size.
 
-The results suggest that the important quantity is not simply \(n\) or \(L\) individually, but their relative sizes. When \(L\) is small compared with the typical distance travelled by the random walk, the boundaries strongly affect the result. When \(L\) is large, the behaviour approaches the unbounded relationship
+The results suggested that the important quantity was not simply \(n\) or \(L\) individually, but their relative sizes. When \(L\) is small compared with the typical distance travelled by the random walk, the boundaries strongly affect the result. When \(L\) is large, the behaviour approaches the unbounded relationship
 
 \[
 r\propto n^{1/2}.
 \]
 
-This suggests that the equation should contain a term which describes the transition between these two regimes.
-
-One possible starting point is therefore to write
+This can be seen particularly clearly from the power-law exponents found for each torus. For sizes \(5,10,25,50,100\) and \(200\), the exponents were approximately
 
 \[
-r(n,L)=\sqrt{n}\,g\left(\frac{\sqrt{n}}{L}\right),
+0.013,\quad0.045,\quad0.170,\quad0.360,\quad0.4875,\quad0.5004.
 \]
 
-where \(g\) is an unknown function.
+The exponent therefore approaches \(0.5\) as the torus becomes larger. This provided strong evidence that the torus size controls the transition between bounded and unbounded behaviour.
 
-The quantity
+### Comparing the Number of Steps with the Torus Size
+
+I first considered what determines when the boundaries of the torus should begin to matter.
+
+For an unbounded random walk, the characteristic distance travelled after \(n\) steps is proportional to
 
 \[
-\frac{\sqrt{n}}{L}
+\sqrt n.
 \]
 
-compares the typical distance travelled by an unbounded random walk with the size of the torus. If this value is small, the walker has not travelled far enough for the topology of the torus to have a major effect. If it becomes large, the finite size of the torus becomes increasingly important.
-
-For a very large torus,
+The torus has a characteristic length scale given by \(L\). Therefore, a natural dimensionless quantity to compare the two is
 
 \[
-\frac{\sqrt{n}}{L}\rightarrow0,
+x=\frac{\sqrt n}{L}.
 \]
 
-so \(g\) should approach a constant and the equation should reduce to the usual random-walk relationship
+This quantity gives a measure of how large the random walk has become compared with the available space.
+
+If
 
 \[
-r\propto\sqrt{n}.
+\frac{\sqrt n}{L}\ll1,
 \]
 
-For smaller tori, \(g\) must instead decrease the growth of \(r\), eventually producing the plateau seen in the simulations.
+then the walkers have not travelled far enough for the finite size of the torus to have much effect. The walk should therefore behave approximately like an unbounded random walk.
 
-I therefore used the simulation data to investigate whether a function of this form could describe the behaviour across different torus sizes, rather than fitting each torus independently. This provides a way of looking for a single equation that captures both the normal \(\sqrt{n}\) random-walk behaviour and the finite-size effects caused by the torus.
+On the other hand, if
+
+\[
+\frac{\sqrt n}{L}
+\]
+
+becomes large, the walkers have explored a significant proportion of the torus and the finite boundaries should begin to limit the average distance.
+
+This suggested that the equation should depend on \(n\) and \(L\) through this ratio.
+
+I therefore rewrote the relationship in the form
+
+\[
+\frac{r}{L}
+=
+g\left(\frac{\sqrt n}{L}\right).
+\]
+
+This was useful because both sides are now dimensionless. It also means that results from different torus sizes can be compared using the same function.
+
+### Finding the Shape of \(g\)
+
+The graphs showed that the function needed to have two different limiting behaviours.
+
+For small values of
+
+\[
+x=\frac{\sqrt n}{L},
+\]
+
+the random walk should behave like an unbounded walk. Therefore,
+
+\[
+r\approx k\sqrt n.
+\]
+
+Dividing by \(L\),
+
+\[
+\frac rL\approx k\frac{\sqrt n}{L}=kx.
+\]
+
+Therefore \(g(x)\) must initially be approximately linear.
+
+For large \(x\), however, the average distance approaches a limiting value because the torus is finite. Therefore,
+
+\[
+\frac rL\rightarrow C
+\]
+
+for some constant \(C\).
+
+I therefore needed a function which is approximately linear near \(x=0\), but approaches a constant as \(x\) becomes large.
+
+The hyperbolic tangent has exactly these properties:
+
+\[
+\tanh x\approx x
+\qquad\text{for small }x,
+\]
+
+while
+
+\[
+\tanh x\rightarrow1
+\qquad\text{as }x\rightarrow\infty.
+\]
+
+This led me to try
+
+\[
+g(x)=C\tanh(ax),
+\]
+
+where \(C\) and \(a\) are constants which determine the precise shape and scale of the relationship. Their values can depend on the properties of the random walk being considered.
+
+Substituting
+
+\[
+x=\frac{\sqrt n}{L}
+\]
+
+gives
+
+\[
+\frac rL
+=
+C\tanh\left(\frac{a\sqrt n}{L}\right),
+\]
+
+and hence
+
+\[
+\boxed{
+r(n,L)
+=
+CL\tanh\left(\frac{a\sqrt n}{L}\right)
+}
+\]
+
+### Checking the Equation
+
+I then checked whether this equation produced the two limiting behaviours observed in the simulations.
+
+For a large torus, or for a small number of steps,
+
+\[
+\frac{\sqrt n}{L}\ll1.
+\]
+
+Using the approximation
+
+\[
+\tanh x\approx x,
+\]
+
+the equation becomes
+
+\[
+r
+\approx
+CL\left(\frac{a\sqrt n}{L}\right),
+\]
+
+so
+
+\[
+r\approx Ca\sqrt n.
+\]
+
+Therefore,
+
+\[
+\boxed{r\propto\sqrt n},
+\]
+
+which is exactly the behaviour expected for an unbounded two-dimensional random walk.
+
+For a small torus and sufficiently large \(n\),
+
+\[
+\frac{\sqrt n}{L}\gg1,
+\]
+
+so
+
+\[
+\tanh\left(\frac{a\sqrt n}{L}\right)\rightarrow1.
+\]
+
+The equation therefore approaches
+
+\[
+r\rightarrow CL.
+\]
+
+Thus the average distance approaches a constant proportional to the size of the torus, explaining the plateaus observed for the smaller tori.
+
+This also explains the results from the simulations. The size \(5\) and \(10\) tori reach their limiting behaviour very quickly, while the size \(100\) and \(200\) tori continue to behave much more like an unbounded random walk. In particular, the size \(200\) torus produced a power-law exponent of \(0.5004\), almost exactly the theoretical value of \(0.5\).
+
+The equation therefore provides a single mathematical model which connects the two limiting cases:
+
+\[
+\boxed{
+r(n,L)
+=
+CL\tanh\left(\frac{a\sqrt n}{L}\right)
+}
+\]
+
+with
+
+\[
+r\propto\sqrt n
+\]
+
+for an effectively unbounded walk, and
+
+\[
+r\propto L
+\]
+
+when the finite size of the torus dominates.
+
+This gave me a mathematical explanation for the behaviour seen throughout the simulations: increasing the torus size does not change the fundamental random-walk behaviour, but instead delays the point at which the finite topology begins to constrain the walkers.
 
 ---
 
