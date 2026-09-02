@@ -199,11 +199,11 @@ This serves as the **baseline** for comparison against the bounded 2D torus, whe
 
 After confirming the √n relationship on the unbounded 2D plane, I wanted to see what happens when the plane is made finite but still allows the walker to move continuously without hitting an actual edge. This led me to the idea of a bounded 2D torus.
 
-Instead of stopping the walker when it reaches an edge, the edges are joined together. This means that if a walker moves past the maximum x coordinate it reappears at the minimum x coordinate, and the same happens in the y direction. This makes the surface bounded but means the walker can continue walking forever.
+Instead of stopping the walker when it reaches an edge, the edges are joined together. This means that if a walker moves past the maximum x coordinate, it reappears at the minimum x coordinate, and the same happens in the y direction. This makes the surface bounded but means the walker can continue walking forever.
 
-I kept the same basic setup as the unbounded simulations so that the results could be compared directly. Each simulation uses 1000 walkers, 5000 steps per walker and a step size of 1. The only thing I change between runs is the size of the torus.
+I kept the same basic setup as the unbounded simulations so that the results could be compared directly. Each simulation uses 1000 walkers, 5000 steps per walker, and a step size of 1. The only thing I change between runs is the size of the torus.
 
-The torus sizes I chose were **5, 10, 25, 50, 100 and 200**, where a torus of size L has coordinates from -L to L in both directions.
+The torus sizes I chose were **5, 10, 25, 50, 100, and 200**, where a torus of size L has coordinates from -L to L in both directions.
 
 This means that the total width of the coordinate system is 2L, rather than L. I chose a range of sizes so that the smaller tori should reach their bounded behaviour much faster, while the larger tori should behave more like the unbounded plane for longer.
 
@@ -213,7 +213,8 @@ This means that the total width of the coordinate system is 2L, rather than L. I
 
 The first torus I tested had a size of 5, giving a coordinate range of -5 to 5 in both directions.
 
-![Torus size 5 heatmap](INSERT_IMAGE_HERE)
+<img width="2029" height="1736" alt="5_final_position_heatmap" src="https://github.com/user-attachments/assets/3694ca34-4069-4a2d-8dcb-5463f5352f8c" />
+
 
 The heatmap is already very different from the unbounded plane. Instead of producing a roughly circular cloud which continues spreading outwards, the walkers are confined to the finite torus.
 
