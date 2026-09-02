@@ -213,7 +213,7 @@ This means that the total width of the coordinate system is 2L, rather than L. I
 
 The first torus I tested had a size of 5, giving a coordinate range of -5 to 5 in both directions.
 
-<img size=70% alt="5_final_position_heatmap" src="https://github.com/user-attachments/assets/3694ca34-4069-4a2d-8dcb-5463f5352f8c" />
+<img width=500 height=500 alt="5_final_position_heatmap" src="https://github.com/user-attachments/assets/3694ca34-4069-4a2d-8dcb-5463f5352f8c" />
 
 
 The heatmap is already very different from the unbounded plane. Instead of producing a roughly circular cloud which continues spreading outwards, the walkers are confined to the finite torus.
