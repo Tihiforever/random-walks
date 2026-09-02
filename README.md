@@ -118,11 +118,14 @@ The three plots below show all five runs together. The combined line graph shows
 
 | Combined line — all runs | Average final distance per run |
 |--------------------------|-------------------------------|
-| ![image]("https://github.com/user-attachments/assets/a0358a61-bf64-4977-86bc-6e4c02df8235") | ![image]("https://github.com/user-attachments/assets/8ab04178-9083-4380-92b1-a6878adb4c52") |
+| <img width="1500" height="900" alt="combined_line" src="https://github.com/user-attachments/assets/ae12294c-18bc-4994-a3a2-5cd6c419d771" />
+ | <img width="1500" height="900" alt="combined_scatter_final" src="https://github.com/user-attachments/assets/a6c83f84-07fb-4269-b1d2-ff21312c68f4" />
+ |
 
 | Average distance across all steps per run |
 |------------------------------------------|
-| ![image]("https://github.com/user-attachments/assets/dd0291b7-0255-4a6a-9278-6f9670cab144") |
+| <img width="1500" height="900" alt="combined_scatter_overall" src="https://github.com/user-attachments/assets/ebe65b2d-d8f6-4fdc-8c25-af46e14be1a7" />
+ |
 
 ---
 
@@ -236,7 +239,8 @@ This shows why I expected the behaviour of the torus to be very different once t
 
 ### Average Distance vs Steps
 
-![Torus size 5 average distance](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_5_avg_distance" src="https://github.com/user-attachments/assets/909a8209-8815-414f-99c5-6260fa424036" />
+
 
 The average distance initially increases very quickly. However, it then reaches a value of roughly **4.2** and stays around this value for the rest of the simulation.
 
@@ -252,7 +256,8 @@ This suggests that there are two different stages to the random walk on the toru
 
 ### Log-Log Plot
 
-![Torus size 5 log-log plot](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_5_loglog" src="https://github.com/user-attachments/assets/53731d57-801d-416e-83cc-287abc4b6945" />
+
 
 The log-log graph gives a gradient of
 
@@ -274,7 +279,7 @@ Instead, this shows that the √n relationship breaks down on a small bounded to
 
 ### Distribution of Final Distances
 
-![Torus size 5 final distance distribution](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_5_final_distribution" src="https://github.com/user-attachments/assets/3b83b74b-d509-495a-b656-72ae787c456b" />
 
 The final distance distribution is also very different from the unbounded case.
 
@@ -290,7 +295,8 @@ This supports the idea that after 5000 steps the walkers have explored a large p
 
 The next torus I tested had a size of 10, giving a coordinate range of -10 to 10 in both directions.
 
-![Torus size 10 heatmap](INSERT_IMAGE_HERE)
+<img width="500" height="500" alt="10_final_position_heatmap" src="https://github.com/user-attachments/assets/fd6ec491-28dc-400a-ac11-0824be549367" />
+
 
 The heatmap shows the same general behaviour as the size 5 torus, although the walkers are now spread over a larger area.
 
@@ -312,7 +318,8 @@ This shows that although the size 10 torus is larger than the size 5 torus, the 
 
 ### Average Distance vs Steps
 
-![Torus size 10 average distance](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_10_avg_distance" src="https://github.com/user-attachments/assets/92a11596-dc2f-4ae3-a1ce-9d2297ce28fc" />
+
 
 The average distance again initially increases very quickly. However, it then reaches a value of roughly **8** and stays around this value for the rest of the simulation.
 
@@ -328,7 +335,8 @@ The same two stages can therefore be seen here. Initially, the walkers behave mo
 
 ### Log-Log Plot
 
-![Torus size 10 log-log plot](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_10_loglog" src="https://github.com/user-attachments/assets/609657d2-8a33-41b4-b98c-71e61b712f45" />
+
 
 The log-log graph gives a gradient of
 
@@ -350,7 +358,7 @@ Instead, this shows that the \(\sqrt{n}\) relationship breaks down on a bounded 
 
 ### Distribution of Final Distances
 
-![Torus size 10 final distance distribution](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_10_final_distribution" src="https://github.com/user-attachments/assets/dfd1e932-9a93-444f-a10f-e30aecc66bdb" />
 
 The final distance distribution is spread over a much larger range than for the size 5 torus, with distances reaching approximately **14**, which agrees with the calculated maximum distance of 14.14.
 
@@ -366,7 +374,7 @@ Overall, the results are very similar to those of the size 5 torus, but the larg
 
 The next torus I tested had a size of 25, giving a coordinate range of -25 to 25 in both directions.
 
-![Torus size 25 heatmap](INSERT_IMAGE_HERE)
+<img width="500" height="500" alt="25_final_position_heatmap" src="https://github.com/user-attachments/assets/a5f5c762-4fe1-4672-8596-f9bfacb67950" />
 
 The heatmap shows the same general behaviour as the smaller tori, although the walkers are now spread over a much larger area.
 
@@ -388,7 +396,7 @@ This shows that the size 25 torus gives the walkers considerably more space to s
 
 ### Average Distance vs Steps
 
-![Torus size 25 average distance](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_25_avg_distance" src="https://github.com/user-attachments/assets/e4e4ea5c-7dd0-49f9-87ec-6219296826d8" />
 
 The average distance initially increases very quickly. It then continues increasing more gradually before reaching a value of roughly **19.5** and staying around this value for the rest of the simulation.
 
@@ -404,7 +412,7 @@ The same two stages can still be seen here. Initially, the walkers behave simila
 
 ### Log-Log Plot
 
-![Torus size 25 log-log plot](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_25_loglog" src="https://github.com/user-attachments/assets/90fe09f4-87ce-4d9e-a27e-3081d8859be3" />
 
 The log-log graph gives a gradient of
 
@@ -426,7 +434,7 @@ Instead, this shows that the \(\sqrt{n}\) relationship eventually breaks down on
 
 ### Distribution of Final Distances
 
-![Torus size 25 final distance distribution](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_25_final_distribution" src="https://github.com/user-attachments/assets/6e87d2f8-8db3-4daa-b335-cca4994741e5" />
 
 The final distance distribution is spread over a much larger range than for the smaller tori, with distances reaching approximately **35**, which agrees with the calculated maximum distance of 35.36.
 
@@ -442,7 +450,7 @@ Overall, the size 25 torus shows the same general behaviour as the smaller tori,
 
 The next torus I tested had a size of 50, giving a coordinate range of -50 to 50 in both directions.
 
-![Torus size 50 heatmap](INSERT_IMAGE_HERE)
+<img width="500" height="500" alt="50_final_position_heatmap" src="https://github.com/user-attachments/assets/21fabfc8-4068-4e7b-88f2-04b5c037f8a9" />
 
 The heatmap is much more spread out than for the smaller tori. The walkers are distributed across a large proportion of the available area, showing that the larger torus gives them considerably more space to explore before the finite boundaries become dominant.
 
@@ -464,7 +472,8 @@ However, this does not mean that the torus and the unbounded plane behave in the
 
 ### Average Distance vs Steps
 
-![Torus size 50 average distance](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_50_avg_distance" src="https://github.com/user-attachments/assets/aa42c7db-8104-40d1-8959-db26ee0217fb" />
+
 
 The average distance initially increases very quickly. It then continues to increase more gradually, eventually reaching a value of roughly **39** and remaining around this value for the rest of the simulation.
 
@@ -480,7 +489,8 @@ The graph also shows that the plateau is reached later than for the smaller tori
 
 ### Log-Log Plot
 
-![Torus size 50 log-log plot](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_50_loglog" src="https://github.com/user-attachments/assets/95e8a9d1-cb1d-4868-94bf-66b1b61234b4" />
+
 
 The log-log graph gives a gradient of
 
@@ -502,7 +512,8 @@ I therefore would still not describe 0.3601 as the true random-walk exponent of 
 
 ### Distribution of Final Distances
 
-![Torus size 50 final distance distribution](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_50_final_distribution" src="https://github.com/user-attachments/assets/7c1b37f2-f7ea-4120-83c0-be72ed2954d5" />
+
 
 The final distance distribution is spread over a much larger range than for the smaller tori, with distances reaching approximately **70**. This is consistent with the calculated maximum distance of 70.71.
 
@@ -518,7 +529,7 @@ Overall, the size 50 torus behaves much more like the unbounded plane than the s
 
 The next torus I tested had a size of 100, giving a coordinate range of -100 to 100 in both directions.
 
-![Torus size 100 heatmap](INSERT_IMAGE_HERE)
+<img width="500" height="500" alt="100_final_position_heatmap" src="https://github.com/user-attachments/assets/e9b0fbf3-9a84-4e6a-8654-664b27d0f4cb" />
 
 The heatmap is much more spread out than for the smaller tori. The walkers are distributed across a large proportion of the available area, with no obvious concentration around the origin. This suggests that after 5000 steps the walkers have not yet fully explored the torus.
 
@@ -540,7 +551,8 @@ This means that the torus is large enough that the maximum possible distance is 
 
 ### Average Distance vs Steps
 
-![Torus size 100 average distance](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_100_avg_distance" src="https://github.com/user-attachments/assets/801a14c6-9c7d-474b-88fc-a646ff800fd4" />
+
 
 The average distance continues to increase throughout the entire simulation. Unlike the smaller tori, there is no clear plateau by 5000 steps.
 
@@ -556,7 +568,8 @@ The graph also looks much closer to the expected behaviour of an unbounded rando
 
 ### Log-Log Plot
 
-![Torus size 100 log-log plot](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_100_loglog" src="https://github.com/user-attachments/assets/3b75d1af-579c-4215-ab4a-a4c2d5a314a4" />
+
 
 The log-log graph gives a gradient of
 
@@ -578,7 +591,8 @@ This suggests that for a sufficiently large torus, the random walk can behave al
 
 ### Distribution of Final Distances
 
-![Torus size 100 final distance distribution](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_100_final_distribution" src="https://github.com/user-attachments/assets/086caec7-e271-4616-8ae5-887c9f754caa" />
+
 
 The final distance distribution is spread over a much larger range than for the smaller tori, with distances reaching approximately **140**. This is close to the calculated maximum distance of 141.42.
 
@@ -594,7 +608,8 @@ Overall, the size 100 torus behaves very similarly to the unbounded plane over t
 
 The next torus I tested had a size of 200, giving a coordinate range of -200 to 200 in both directions.
 
-![Torus size 200 heatmap](INSERT_IMAGE_HERE)
+<img width="500" height="500" alt="200_final_position_heatmap" src="https://github.com/user-attachments/assets/9cd3d9c0-4a68-4801-a3da-18ea4df3ed6d" />
+
 
 The heatmap is even more spread out than for the size 100 torus. The walkers are concentrated around the origin but have spread across a substantial area of the torus, with some walkers reaching distances of over 200 lattice units. There is no obvious concentration caused by the boundaries.
 
@@ -616,7 +631,8 @@ This means that the torus is now sufficiently large that the maximum possible di
 
 ### Average Distance vs Steps
 
-![Torus size 200 average distance](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_200_avg_distance" src="https://github.com/user-attachments/assets/09c78b7c-188d-4f2c-b305-2bbb12624bbe" />
+
 
 The average distance continues to increase throughout the entire simulation. There is no clear plateau by 5000 steps, showing that the finite boundaries of the torus are not yet having a significant effect on the average distance.
 
@@ -632,7 +648,7 @@ The graph also looks very similar to the behaviour expected for an unbounded ran
 
 ### Log-Log Plot
 
-![Torus size 200 log-log plot](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_200_loglog" src="https://github.com/user-attachments/assets/c5404fb5-05fb-4578-ad07-c3c83b40bed5" />
 
 The log-log graph gives a gradient of
 
@@ -654,7 +670,8 @@ The gradient being almost exactly 0.5 suggests that the size 200 torus behaves e
 
 ### Distribution of Final Distances
 
-![Torus size 200 final distance distribution](INSERT_IMAGE_HERE)
+<img width="1000" height="600" alt="torus_200_final_distribution" src="https://github.com/user-attachments/assets/53604ee5-81f5-4a2d-b993-2b28e378de9c" />
+
 
 The final distance distribution is spread over a large range, with most walkers ending relatively close to the origin but some reaching distances of over 200 lattice units. The distribution has a long tail towards larger distances.
 
@@ -672,7 +689,8 @@ Overall, the size 200 torus behaves very similarly to the unbounded plane over t
 
 After testing torus sizes of 5, 10, 25, 50, 100 and 200, I can now compare how the size of the torus affects the behaviour of the random walk.
 
-![Average distance comparison](comparison_average_distance.png)
+<img width="2000" height="900" alt="comparison_average_distance" src="https://github.com/user-attachments/assets/38278b59-34e0-4a71-90f5-e63c7b3de0e6" />
+
 
 The comparison of average distance against the number of steps shows a clear transition as the torus becomes larger.
 
@@ -695,7 +713,8 @@ This shows that increasing the size of the torus allows the walkers to spread fu
 
 ### Power-Law Exponent
 
-![Power-law exponent vs torus size](exponent_vs_torus_size.png)
+<img width="2000" height="900" alt="exponent_vs_torus_size" src="https://github.com/user-attachments/assets/60fe8605-4d88-420c-8cdd-34fc4420c483" />
+
 
 To investigate the effect of the torus boundaries more quantitatively, I compared the power-law exponent obtained from the relationship
 
@@ -742,7 +761,7 @@ This provides strong evidence that the deviation from the expected \(n^{0.5}\) r
 
 ### Mean Final Distance vs Torus Size
 
-![Mean final distance vs torus size](final_distance_vs_torus_size.png)
+<img width="2000" height="900" alt="final_distance_vs_torus_size" src="https://github.com/user-attachments/assets/25ab410a-0348-4cb6-817a-a840802efd16" />
 
 The mean final distance after 5000 steps also increases as the torus size increases.
 
