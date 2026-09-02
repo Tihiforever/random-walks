@@ -228,15 +228,15 @@ Because the edges are joined together, the corners of this graph are not actuall
 
 The maximum possible distance from the origin is
 
-\[
+$$
 r_{\max}=\sqrt{5^2+5^2}=\sqrt{50}\approx7.07.
-\]
+$$
 
 This is already much smaller than the expected distance on an unbounded plane after 5000 steps:
 
-\[
+$$
 \sqrt{5000}\approx70.7.
-\]
+$$
 
 This shows why I expected the behaviour of the torus to be very different once the walker has had enough time to explore it.
 
@@ -249,9 +249,9 @@ The average distance initially increases very quickly. However, it then reaches 
 
 The mean final distance was:
 
-\[
-\boxed{4.21}
-\]
+$$
+4.21
+$$
 
 This is the first major difference from the unbounded plane. On the unbounded plane the average distance continues to increase as the number of steps increases, following the √n relationship. On the size 5 torus, the average distance reaches a plateau because the walker cannot keep getting further away from the origin.
 
@@ -264,15 +264,15 @@ This suggests that there are two different stages to the random walk on the toru
 
 The log-log graph gives a gradient of
 
-\[
-\boxed{0.0133}
-\]
+$$
+0.0133
+$$
 
 with an \(R^2\) value of
 
-\[
-\boxed{0.10115}.
-\]
+$$
+0.10115.
+$$
 
 This is very different from the gradient of approximately 0.5 found for the unbounded plane.
 
@@ -329,7 +329,7 @@ The average distance again initially increases very quickly. However, it then re
 The mean final distance was:
 
 $$
-\boxed{8.10}
+8.10
 $$
 
 This is very similar to the behaviour seen on the size 5 torus. The main difference is that the larger torus allows the walkers to move further from the origin before the effects of the finite boundaries become dominant.
@@ -344,13 +344,13 @@ The same two stages can therefore be seen here. Initially, the walkers behave mo
 The log-log graph gives a gradient of
 
 $$
-\boxed{0.0460}
+0.0460
 $$
 
 with an \(R^2\) value of
 
 $$
-\boxed{0.28037}.
+0.28037.
 $$
 
 Again, this is much smaller than the gradient of approximately 0.5 found for the unbounded plane.
@@ -385,15 +385,15 @@ Because the edges are joined together, the corners of this graph are still not s
 
 The maximum possible distance from the origin is
 
-\[
+$$
 r_{\max}=\sqrt{25^2+25^2}=\sqrt{1250}\approx35.36.
-\]
+$$
 
 This is still smaller than the expected distance on an unbounded plane after 5000 steps:
 
-\[
+$$
 \sqrt{5000}\approx70.7.
-\]
+$$
 
 This shows that the size 25 torus gives the walkers considerably more space to spread out before the effects of the finite boundaries become dominant.
 
@@ -405,9 +405,9 @@ The average distance initially increases very quickly. It then continues increas
 
 The mean final distance was:
 
-\[
-\boxed{19.57}
-\]
+$$
+19.57
+$$
 
 This is substantially larger than the mean final distances for the size 5 and size 10 tori. This is because the larger torus allows the walkers to travel further from the origin before the finite boundaries begin to limit their distance.
 
@@ -419,15 +419,15 @@ The same two stages can still be seen here. Initially, the walkers behave simila
 
 The log-log graph gives a gradient of
 
-\[
-\boxed{0.1703}
-\]
+$$
+0.1703
+$$
 
 with an \(R^2\) value of
 
-\[
-\boxed{0.65383}.
-\]
+$$
+0.65383.
+$$
 
 This is still smaller than the gradient of approximately 0.5 found for the unbounded plane, although it is noticeably larger than the gradients found for the size 5 and size 10 tori.
 
@@ -461,15 +461,15 @@ Because the edges are joined together, the corners of this graph are still not s
 
 The maximum possible distance from the origin is
 
-\[
+$$
 r_{\max}=\sqrt{50^2+50^2}=\sqrt{5000}\approx70.71.
-\]
+$$
 
 Interestingly, this is exactly the same as the expected distance on an unbounded plane after 5000 steps:
 
-\[
+$$
 \sqrt{5000}\approx70.7.
-\]
+$$
 
 However, this does not mean that the torus and the unbounded plane behave in the same way. The maximum possible distance on the torus is finite, whereas the unbounded plane has no upper limit. The size 50 torus is simply large enough that the walkers can behave similarly to an unbounded random walk for a much greater number of steps.
 
@@ -482,9 +482,9 @@ The average distance initially increases very quickly. It then continues to incr
 
 The mean final distance was:
 
-\[
-\boxed{39.22}
-\]
+$$
+39.22
+$$
 
 This is substantially larger than the mean final distances for the size 5, size 10 and size 25 tori. As the size of the torus increases, the walkers can travel further from the origin before the finite boundaries begin to affect the random walk.
 
@@ -497,15 +497,15 @@ The graph also shows that the plateau is reached later than for the smaller tori
 
 The log-log graph gives a gradient of
 
-\[
-\boxed{0.3601}
-\]
+$$
+0.3601
+$$
 
 with an \(R^2\) value of
 
-\[
-\boxed{0.93175}.
-\]
+$$
+0.93175.
+$$
 
 This is much closer to the gradient of approximately 0.5 found for the unbounded plane than the gradients found for the smaller tori.
 
@@ -540,15 +540,15 @@ Because the edges are joined together, the corners of this graph are still not s
 
 The maximum possible distance from the origin is
 
-\[
+$$
 r_{\max}=\sqrt{100^2+100^2}=\sqrt{20000}\approx141.42.
-\]
+$$
 
 This is now much larger than the expected distance on an unbounded plane after 5000 steps:
 
-\[
+$$
 \sqrt{5000}\approx70.7.
-\]
+$$
 
 This means that the torus is large enough that the maximum possible distance is not reached during the simulation. The walkers therefore have much more freedom to behave like an unbounded random walk.
 
@@ -561,9 +561,9 @@ The average distance continues to increase throughout the entire simulation. Unl
 
 The mean final distance was:
 
-\[
-\boxed{58.97}
-\]
+$$
+58.97
+$$
 
 This is substantially larger than the mean final distance for the size 50 torus. The walkers are able to continue spreading away from the origin because the torus is large enough that its boundaries have very little effect during the simulation.
 
@@ -576,15 +576,15 @@ The graph also looks much closer to the expected behaviour of an unbounded rando
 
 The log-log graph gives a gradient of
 
-\[
-\boxed{0.4875}
-\]
+$$
+0.4875
+$$
 
 with an \(R^2\) value of
 
-\[
-\boxed{0.99813}.
-\]
+$$
+0.99813.
+$$
 
 This is extremely close to the gradient of approximately 0.5 expected for an unbounded two-dimensional random walk.
 
@@ -620,15 +620,15 @@ Because the edges are joined together, the corners of this graph are still not s
 
 The maximum possible distance from the origin is
 
-\[
+$$
 r_{\max}=\sqrt{200^2+200^2}=\sqrt{80000}\approx282.84.
-\]
+$$
 
 This is much larger than the expected distance scale after 5000 steps:
 
-\[
+$$
 \sqrt{5000}\approx70.7.
-\]
+$$
 
 This means that the torus is now sufficiently large that the maximum possible distance is very unlikely to constrain the walkers during the simulation. The walkers therefore have considerable freedom to behave like an unbounded random walk.
 
@@ -641,9 +641,9 @@ The average distance continues to increase throughout the entire simulation. The
 
 The mean final distance was:
 
-\[
-\boxed{62.57}
-\]
+$$
+62.57
+$$
 
 This is slightly larger than the mean final distance for the size 100 torus. The walkers are therefore able to spread slightly further from the origin as the size of the torus increases.
 
@@ -655,15 +655,15 @@ The graph also looks very similar to the behaviour expected for an unbounded ran
 
 The log-log graph gives a gradient of
 
-\[
-\boxed{0.5004}
-\]
+$$
+0.5004
+$$
 
 with an \(R^2\) value of
 
-\[
-\boxed{0.99945}.
-\]
+$$
+0.99945.
+$$
 
 This is extremely close to the gradient of approximately 0.5 expected for an unbounded two-dimensional random walk.
 
@@ -721,17 +721,17 @@ This shows that increasing the size of the torus allows the walkers to spread fu
 
 To investigate the effect of the torus boundaries more quantitatively, I compared the power-law exponent obtained from the relationship
 
-\[
+$$
 r \propto n^\alpha
-\]
+$$
 
 for each torus size.
 
 For an unbounded two-dimensional random walk, the expected exponent is approximately
 
-\[
+$$
 \alpha=0.5.
-\]
+$$
 
 The measured exponents were approximately:
 
@@ -748,15 +748,15 @@ There is a very clear relationship between torus size and the measured exponent.
 
 The size 100 torus gives
 
-\[
+$$
 \alpha=0.4875,
-\]
+$$
 
 while the size 200 torus gives
 
-\[
+$$
 \alpha=0.5004.
-\]
+$$
 
 Therefore, the size 200 torus produces an exponent essentially identical to the theoretical unbounded value.
 
@@ -772,9 +772,9 @@ For small tori, the maximum possible distance is relatively small, so the walker
 
 The increase is particularly large between torus sizes 25 and 100. However, the difference between sizes 100 and 200 is much smaller:
 
-\[
+$$
 58.97 \rightarrow 62.57.
-\]
+$$
 
 This suggests that the random walks are approaching the behaviour expected on an unbounded plane. Once the torus is large compared with the distance typically travelled by a walker, making it even larger has relatively little effect over the fixed 5000-step simulation.
 
@@ -786,16 +786,16 @@ For small torus sizes, the average distance quickly reaches a plateau because th
 
 As the torus size increases, the plateau is delayed and eventually disappears within the 5000-step simulation. At the same time, the measured power-law exponent approaches 0.5:
 
-\[
+$$
 0.013 \rightarrow 0.045 \rightarrow 0.170 \rightarrow 0.360
 \rightarrow 0.4875 \rightarrow 0.5004.
-\]
+$$
 
 The size 200 torus gives an exponent of
 
-\[
-\boxed{0.5004},
-\]
+$$
+0.5004,
+$$
 
 which is almost exactly the theoretical value for an unbounded two-dimensional random walk.
 
@@ -809,37 +809,37 @@ Having established how the average distance changes with both the number of step
 
 For an unbounded two-dimensional random walk, the expected distance from the origin follows approximately
 
-\[
+$$
 r\propto\sqrt{n},
-\]
+$$
 
 where \(r\) is the average distance from the origin and \(n\) is the number of steps. This can be written as
 
-\[
+$$
 r=kn^{1/2},
-\]
+$$
 
 where \(k\) is a constant determined by the particular random walk.
 
 However, the torus introduces a second variable: its size. For small tori, the walkers eventually become constrained by the finite space, causing the average distance to stop increasing. Therefore, I wanted to find a function of the form
 
-\[
+$$
 r=f(n,L),
-\]
+$$
 
 where \(L\) is the torus size.
 
 The results suggested that the important quantity was not simply \(n\) or \(L\) individually, but their relative sizes. When \(L\) is small compared with the typical distance travelled by the random walk, the boundaries strongly affect the result. When \(L\) is large, the behaviour approaches the unbounded relationship
 
-\[
+$$
 r\propto n^{1/2}.
-\]
+$$
 
 This can be seen particularly clearly from the power-law exponents found for each torus. For sizes \(5,10,25,50,100\) and \(200\), the exponents were approximately
 
-\[
+$$
 0.013,\quad0.045,\quad0.170,\quad0.360,\quad0.4875,\quad0.5004.
-\]
+$$
 
 The exponent therefore approaches \(0.5\) as the torus becomes larger. This provided strong evidence that the torus size controls the transition between bounded and unbounded behaviour.
 
@@ -849,31 +849,31 @@ I first considered what determines when the boundaries of the torus should begin
 
 For an unbounded random walk, the characteristic distance travelled after \(n\) steps is proportional to
 
-\[
+$$
 \sqrt n.
-\]
+$$
 
 The torus has a characteristic length scale given by \(L\). Therefore, a natural dimensionless quantity to compare the two is
 
-\[
+$$
 x=\frac{\sqrt n}{L}.
-\]
+$$
 
 This quantity gives a measure of how large the random walk has become compared with the available space.
 
 If
 
-\[
+$$
 \frac{\sqrt n}{L}\ll1,
-\]
+$$
 
 then the walkers have not travelled far enough for the finite size of the torus to have much effect. The walk should therefore behave approximately like an unbounded random walk.
 
 On the other hand, if
 
-\[
+$$
 \frac{\sqrt n}{L}
-\]
+$$
 
 becomes large, the walkers have explored a significant proportion of the torus and the finite boundaries should begin to limit the average distance.
 
@@ -881,11 +881,11 @@ This suggested that the equation should depend on \(n\) and \(L\) through this r
 
 I therefore rewrote the relationship in the form
 
-\[
+$$
 \frac{r}{L}
 =
 g\left(\frac{\sqrt n}{L}\right).
-\]
+$$
 
 This was useful because both sides are now dimensionless. It also means that results from different torus sizes can be compared using the same function.
 
@@ -895,29 +895,29 @@ The graphs showed that the function needed to have two different limiting behavi
 
 For small values of
 
-\[
+$$
 x=\frac{\sqrt n}{L},
-\]
+$$
 
 the random walk should behave like an unbounded walk. Therefore,
 
-\[
+$$
 r\approx k\sqrt n.
-\]
+$$
 
 Dividing by \(L\),
 
-\[
+$$
 \frac rL\approx k\frac{\sqrt n}{L}=kx.
-\]
+$$
 
 Therefore \(g(x)\) must initially be approximately linear.
 
 For large \(x\), however, the average distance approaches a limiting value because the torus is finite. Therefore,
 
-\[
+$$
 \frac rL\rightarrow C
-\]
+$$
 
 for some constant \(C\).
 
@@ -925,49 +925,49 @@ I therefore needed a function which is approximately linear near \(x=0\), but ap
 
 The hyperbolic tangent has exactly these properties:
 
-\[
+$$
 \tanh x\approx x
 \qquad\text{for small }x,
-\]
+$$
 
 while
 
-\[
+$$
 \tanh x\rightarrow1
 \qquad\text{as }x\rightarrow\infty.
-\]
+$$
 
 This led me to try
 
-\[
+$$
 g(x)=C\tanh(ax),
-\]
+$$
 
 where \(C\) and \(a\) are constants which determine the precise shape and scale of the relationship. Their values can depend on the properties of the random walk being considered.
 
 Substituting
 
-\[
+$$
 x=\frac{\sqrt n}{L}
-\]
+$$
 
 gives
 
-\[
+$$
 \frac rL
 =
 C\tanh\left(\frac{a\sqrt n}{L}\right),
-\]
+$$
 
 and hence
 
-\[
-\boxed{
+$$
+
 r(n,L)
 =
 CL\tanh\left(\frac{a\sqrt n}{L}\right)
-}
-\]
+
+$$
 
 ### Checking the Equation
 
@@ -975,55 +975,55 @@ I then checked whether this equation produced the two limiting behaviours observ
 
 For a large torus, or for a small number of steps,
 
-\[
+$$
 \frac{\sqrt n}{L}\ll1.
-\]
+$$
 
 Using the approximation
 
-\[
+$$
 \tanh x\approx x,
-\]
+$$
 
 the equation becomes
 
-\[
+$$
 r
 \approx
 CL\left(\frac{a\sqrt n}{L}\right),
-\]
+$$
 
 so
 
-\[
+$$
 r\approx Ca\sqrt n.
-\]
+$$
 
 Therefore,
 
-\[
-\boxed{r\propto\sqrt n},
-\]
+$$
+r\propto\sqrt n,
+$$
 
 which is exactly the behaviour expected for an unbounded two-dimensional random walk.
 
 For a small torus and sufficiently large \(n\),
 
-\[
+$$
 \frac{\sqrt n}{L}\gg1,
-\]
+$$
 
 so
 
-\[
+$$
 \tanh\left(\frac{a\sqrt n}{L}\right)\rightarrow1.
-\]
+$$
 
 The equation therefore approaches
 
-\[
+$$
 r\rightarrow CL.
-\]
+$$
 
 Thus the average distance approaches a constant proportional to the size of the torus, explaining the plateaus observed for the smaller tori.
 
@@ -1031,25 +1031,25 @@ This also explains the results from the simulations. The size \(5\) and \(10\) t
 
 The equation therefore provides a single mathematical model which connects the two limiting cases:
 
-\[
-\boxed{
+$$
+
 r(n,L)
 =
 CL\tanh\left(\frac{a\sqrt n}{L}\right)
-}
-\]
+
+$$
 
 with
 
-\[
+$$
 r\propto\sqrt n
-\]
+$$
 
 for an effectively unbounded walk, and
 
-\[
+$$
 r\propto L
-\]
+$$
 
 when the finite size of the torus dominates.
 
