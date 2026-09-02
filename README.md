@@ -835,7 +835,7 @@ $$
 r\propto n^{1/2}.
 $$
 
-This can be seen particularly clearly from the power-law exponents found for each torus. For sizes \(5,10,25,50,100\) and \(200\), the exponents were approximately
+This can be seen particularly clearly from the power-law exponents found for each torus. For sizes \(5,10,25,50,100 and 200\), the exponents were approximately
 
 $$
 0.013,\quad0.045,\quad0.170,\quad0.360,\quad0.4875,\quad0.5004.
@@ -882,9 +882,7 @@ This suggested that the equation should depend on \(n\) and \(L\) through this r
 I therefore rewrote the relationship in the form
 
 $$
-\frac{r}{L}
-=
-g\left(\frac{\sqrt n}{L}\right).
+\frac{r}{L}=g\left(\frac{\sqrt n}{L}\right).
 $$
 
 This was useful because both sides are now dimensionless. It also means that results from different torus sizes can be compared using the same function.
