@@ -36,6 +36,12 @@ An exploration of Random Walks and how they are used and can be manipulated.
 
 **19/04/26:** Used a Python script to compile all collected data and generate graphs, making it easier to visualise. Finished making the README look nice and uploaded everything to GitHub Pages.
 
+**01/09/26:** Created a Python script and adjusted the old analysis script so that I could simulate the torus and generate the graphs of all the data.
+
+**02/09/26** Wrote up my findings on how the average distance from an origin changes based on the size of the torus over a set number of sets.
+
+**03/09/26** Used all of my findings to try and formulate a skeleton of a formula that relates to n (the number of steps) and L (the torus size). I did this to gain insight into what being an academic researcher would be like in the future. I then began to write the code for a uniform tiling and how a random walk would change along different types of non-standard lattices.
+
 ---
 
 ## To-Do
