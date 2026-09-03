@@ -52,7 +52,7 @@ An exploration of Random Walks and how they are used and can be manipulated.
 - [x] Allow unbounded random walk
 - [x] Graph data from CSV files — average distance vs steps, heatmaps
 - [x] Build bounded torus mode and compare to unbounded plane
-- [ ] Vary torus size and compare results
+- [x] Vary torus size and compare results
 - [ ] Explore regular tilings (square, triangular, hexagonal)
 - [ ] Explore uniform and non-uniform tilings
 - [ ] Try to figure out how distances change on curved surfaces
