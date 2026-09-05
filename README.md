@@ -42,6 +42,10 @@ An exploration of Random Walks and how they are used and can be manipulated.
 
 **03/09/26** Used all of my findings to try and formulate a skeleton of a formula that relates to n (the number of steps) and L (the torus size). I did this to gain insight into what being an academic researcher would be like in the future. I then began to write the code for a uniform tiling and how a random walk would change along different types of non-standard lattices.
 
+**04/09/26** I used the code that I had written and improved with the use of AI to make the simulation run faster, and it allowed me to gain an understanding of better programming practices. I then used this data to generate all the graphs needed for the write-up.
+
+**05/09/26** Started and finished the write-up of all my findings comparing different types of tilings to a regular random walk.
+
 ---
 
 ## To-Do
@@ -53,8 +57,8 @@ An exploration of Random Walks and how they are used and can be manipulated.
 - [x] Graph data from CSV files — average distance vs steps, heatmaps
 - [x] Build bounded torus mode and compare to unbounded plane
 - [x] Vary torus size and compare results
-- [ ] Explore regular tilings (square, triangular, hexagonal)
-- [ ] Explore uniform and non-uniform tilings
+- [x] Explore regular tilings (square, triangular, hexagonal)
+- [x] Explore uniform and non-uniform tilings
 - [ ] Try to figure out how distances change on curved surfaces
 
 ---
@@ -63,7 +67,7 @@ An exploration of Random Walks and how they are used and can be manipulated.
 
 I have discovered a love for geometry and topology, and how distances are affected on curved surfaces. This led me to research how random walks are used in different dimensions. In 1D, over a large number of steps, the walker forms a binomial distribution, which approaches a normal distribution over an infinite number of steps.
 
-When exploring random walking in 2D, I discovered the representation of pi as a random walk and how it changes when the length of pi changes, the base of pi changes, and the difference between using mod 4 and not.
+When exploring random walks in 2D, I discovered the representation of pi as a random walk and how it changes when the length of pi changes, the base of pi changes, and the difference between using mod 4 and not.
 
 | | |
 |---|---|
@@ -1048,6 +1052,710 @@ $$
 when the finite size of the torus dominates.
 
 This gave me a mathematical explanation for the behaviour seen throughout the simulations: increasing the torus size does not change the fundamental random-walk behaviour, but instead delays the point at which the finite topology begins to constrain the walkers.
+
+---
+
+# Results - Uniform Tilings
+
+Having established how a random walk behaves on both an unbounded plane and a bounded torus, I wanted to investigate what happens when the underlying lattice itself is changed.
+
+Up to this point, all of my two-dimensional random walks had been performed on a square lattice, where each vertex has four possible neighbouring positions. I wanted to see whether changing the geometry and number of neighbours would change the behaviour of the random walk.
+
+This led me to investigate different types of tilings. A tiling covers a surface using geometric shapes without gaps or overlaps, and changing the tiling changes the structure of the lattice that the walker moves across.
+
+I first investigated **uniform tilings**, where every vertex has the same local arrangement. This means that although the lattice can have a different structure from the square lattice, the walker encounters the same type of environment everywhere.
+
+For this investigation, I tested two different uniform tilings and compared their behaviour with the square lattice used in the earlier experiments.
+
+The main questions I wanted to investigate were:
+
+- Does the average distance still follow a √n relationship?
+- How does changing the number of possible directions affect the average distance?
+- Does the distribution of final distances change?
+- Does the spatial distribution of the walkers change with the lattice?
+- Can the results be explained by the same underlying random-walk behaviour?
+
+The simulations were kept consistent so that the results could be compared directly. Each simulation used **1000 walkers**, with each walker taking **5000 steps**.
+
+---
+
+## Triangle Tiling
+
+The first uniform tiling I investigated was the **triangle tiling**.
+
+Unlike the square lattice, where each vertex has four neighbouring vertices, the triangular lattice has **six neighbouring vertices** at each point. This gives the walker six possible directions in which it can move at every step.
+
+I kept the same number of walkers and steps as in the previous simulations, using 1000 walkers and 5000 steps per walker.
+
+### Average Distance vs Steps
+
+<img width="1000" height="600" alt="triangle_average_distance" src="https://github.com/user-attachments/assets/[INSERT IMAGE LINK]" />
+
+The average distance from the origin increases throughout the simulation. Unlike the bounded torus simulations, there is no plateau, as the triangular lattice is unbounded and the walkers can continue moving away from the origin.
+
+The average distance reaches approximately **63.4** after 5000 steps.
+
+The graph has a similar overall shape to the √n relationship observed for the square lattice. The rate of increase becomes smaller as the number of steps increases, which is consistent with square-root growth.
+
+This suggests that changing the local structure of the lattice has not removed the underlying random-walk behaviour.
+
+### Log-Log Plot
+
+<img width="1000" height="600" alt="triangle_loglog" src="https://github.com/user-attachments/assets/[INSERT IMAGE LINK]" />
+
+The log-log graph gives a power-law relationship of
+
+$$
+r\propto n^{0.5047}
+$$
+
+with an \(R^2\) value of
+
+$$
+0.99913.
+$$
+
+The measured exponent of **0.5047** is extremely close to the theoretical value of **0.5** found for the square lattice.
+
+The difference from 0.5 is approximately **0.0047**, meaning that the measured exponent differs from the expected value by less than 1%.
+
+The \(R^2\) value of **0.99913** also shows that the power-law relationship provides an extremely strong fit to the data.
+
+This is particularly interesting because the triangular lattice has a different local structure from the square lattice and gives the walker six possible directions instead of four. Despite this, the exponent describing how the distance grows with the number of steps remains approximately the same.
+
+This suggests that the change in lattice affects the scale of the random walk rather than fundamentally changing the relationship between distance and the number of steps.
+
+### Distribution of Final Distances
+
+<img width="1000" height="600" alt="triangle_final_distribution" src="https://github.com/user-attachments/assets/[INSERT IMAGE LINK]" />
+
+The final distance distribution is right-skewed, with most walkers finishing relatively close to the centre and a smaller number travelling considerably further.
+
+The mean final distance was
+
+$$
+63.40
+$$
+
+while the median was
+
+$$
+58.59.
+$$
+
+The mean being larger than the median is consistent with the long right-hand tail of the distribution, where a smaller number of walkers reach much larger distances.
+
+The largest observed distances extend beyond **200 lattice units**, although these are reached by only a small number of walkers.
+
+This is similar to the distribution observed for the square-lattice random walk. The distribution is not concentrated around a single distance, but instead has a broad range of possible final distances because each walker takes a different random path.
+
+### Final Position Heatmap
+
+<img width="1000" height="1000" alt="triangle_final_position_heatmap" src="https://github.com/user-attachments/assets/[INSERT IMAGE LINK]" />
+
+The final position density is concentrated around the origin, with the density gradually decreasing as the distance from the origin increases.
+
+The overall distribution is approximately symmetric around the origin. This is expected because there is no preferred direction in the random walk, so over a large number of walkers the movement in different directions should balance out.
+
+There are also a small number of lower-density regions further from the origin, corresponding to walkers that happened to travel much further than the majority.
+
+The overall shape is similar to the density observed for the square lattice. The walkers form a concentrated central region with a decreasing density towards larger distances.
+
+### Comparison with the Square Lattice
+
+The most significant result from the triangular tiling is that the relationship between average distance and number of steps appears to remain approximately
+
+$$
+r\propto\sqrt n.
+$$
+
+For the triangular lattice, the measured exponent was
+
+$$
+\alpha=0.5047,
+$$
+
+compared with approximately
+
+$$
+\alpha=0.5
+$$
+
+for the square lattice.
+
+The \(R^2\) value of **0.99913** also shows that the relationship is extremely close to a power law.
+
+Therefore, despite changing the lattice from four neighbours to six neighbours, the fundamental scaling behaviour of the random walk appears to remain the same.
+
+The main difference is expected to appear in the constant of proportionality rather than the exponent. In other words, changing the lattice can change how far the walker typically travels after a given number of steps without necessarily changing the fact that the distance grows approximately with \(\sqrt n\).
+
+This gives a useful first result for the investigation of different lattices: the local geometry of the lattice can change the behaviour of the random walk, but the underlying square-root relationship appears to be much more general than just the square lattice.
+
+---
+
+## Hexagonal Tiling
+
+The second uniform tiling I investigated was the **hexagonal tiling**. Unlike the triangular tiling, where each vertex has 6 neighbours, each vertex in a hexagonal tiling has only **3 neighbours**.
+
+This gives a useful comparison with the triangular tiling, as they have very different numbers of possible directions at each step while both remaining uniform tilings of the plane.
+
+Again, I simulated **1000 walkers for 5000 steps**, recording the distance from the origin and the final position of each walker.
+
+### Average Distance vs Steps
+
+| | |
+|---|
+| ![image](hexagon_average_distance.png) |
+
+The average distance increases throughout the simulation, with no sign of the plateau seen on the bounded torus. This is expected as the hexagonal tiling is an unbounded lattice, so the walker can continue moving away from the origin indefinitely.
+
+After 5000 steps, the average distance is approximately **64.26**.
+
+The overall shape of the graph is very similar to both the square and triangular lattice results. The gradient decreases as the number of steps increases, suggesting that the distance is again following a square-root type relationship.
+
+### Log-Log Average Distance
+
+| | |
+|---|
+| ![image](hexagon_loglog.png) |
+
+The log-log plot gives a power-law relationship of
+
+$$
+r\propto n^{0.5073}
+$$
+
+with
+
+$$
+R^2=0.99985.
+$$
+
+The measured exponent of **0.5073** is very close to the theoretical value of **0.5** found for an ordinary unbounded random walk.
+
+The difference from 0.5 is only **0.0073**, while the extremely high \(R^2\) value shows that the power-law model fits the data very closely.
+
+This is particularly interesting because the hexagonal tiling has only 3 possible directions at each vertex, compared with 4 for the square lattice and 6 for the triangular lattice. Despite this difference, the exponent remains very close to \(0.5\).
+
+### Distribution of Final Distances
+
+| | |
+|---|
+| ![image](hexagon_final_distribution.png) |
+
+The distribution of final distances is again right-skewed, with most walkers ending relatively close to the origin and a smaller number travelling much further.
+
+The mean final distance was
+
+$$
+64.26
+$$
+
+and the median was
+
+$$
+59.92.
+$$
+
+As with the triangular tiling, the mean is greater than the median due to the long right-hand tail of the distribution.
+
+The distribution extends to distances of over **200 lattice units**, although only a very small number of walkers reached these distances.
+
+### Final Position Density
+
+| | |
+|---|
+| ![image](hexagon_final_position_heatmap.png) |
+
+The final position density is concentrated around the origin and gradually decreases further away from it.
+
+The distribution remains approximately centred around the origin, with no overall preferred direction. This is expected from the symmetry of the hexagonal lattice and the random choice of direction at each step.
+
+The heatmap also shows a similar overall structure to the triangular tiling. Most walkers remain within a central region, while a smaller number spread much further from the origin.
+
+### Initial Findings
+
+The results from the hexagonal tiling are surprisingly similar to those from the triangular tiling.
+
+Despite the large difference in the number of neighbours, both produce an average distance which follows approximately the same power-law behaviour:
+
+$$
+r\propto\sqrt n.
+$$
+
+For the hexagonal tiling,
+
+$$
+r\propto n^{0.5073},
+$$
+
+while for the triangular tiling,
+
+$$
+r\propto n^{0.5047}.
+$$
+
+Both exponents are extremely close to \(0.5\). This suggests that changing the number of neighbours changes the scale of the random walk, but may not change its fundamental dependence on the number of steps.
+
+The next step is therefore to compare the two uniform tilings directly and see whether the differences between them are significant despite their almost identical power-law exponents.
+
+### Comparison with a Standard Random Walk
+
+Perhaps the most significant result is how closely the walks on both uniform tilings resemble a standard two-dimensional random walk.
+
+For a standard unbounded two-dimensional random walk, the typical distance from the origin scales as
+
+$$
+r \propto \sqrt{n}
+$$
+
+giving a theoretical power-law exponent of
+
+$$
+\alpha = \frac{1}{2}.
+$$
+
+The results from both tilings agree remarkably well with this behaviour. The triangular tiling gives
+
+$$
+\alpha \approx 0.5047
+$$
+
+while the hexagonal tiling gives
+
+$$
+\alpha \approx 0.5073.
+$$
+
+Both values are extremely close to the standard random-walk value of $0.5$. The log-log plots are also almost perfectly linear, with $R^2$ values above $0.999$.
+
+This suggests that, despite the different local geometry of the triangular and hexagonal tilings, the random walks behave almost identically to a standard two-dimensional random walk when viewed on a large scale.
+
+The individual paths are constrained by the geometry of their respective tilings, but these local differences appear to average out over many steps. The overall statistical behaviour therefore remains essentially the same: the average distance grows approximately as $\sqrt{n}$.
+
+### Conclusion
+
+The comparison between the two uniform tilings shows that the large-scale behaviour of a random walk is remarkably robust to changes in the underlying regular geometry.
+
+Both the triangular and hexagonal tilings produce:
+
+- Almost identical average-distance curves.
+- Power-law behaviour extremely close to $r \propto \sqrt{n}$.
+- Power-law exponents very close to $\alpha = 0.5$.
+- Very high $R^2$ values for the power-law fits.
+- Behaviour that is almost indistinguishable from a standard two-dimensional random walk.
+
+This provides a strong baseline for the next stage of the investigation. If regular triangular and hexagonal geometries both reproduce the familiar behaviour of a standard random walk, it becomes interesting to ask what happens when the regularity of the space is removed.
+
+The next step is therefore to investigate **non-uniform tilings**, where the local geometry varies across the space, and determine whether this can produce a measurable change in the behaviour of the random walk.
+
+# Results - Non-Uniform Tilings
+
+Having established how closely different uniform tilings reproduce the behaviour of a standard two-dimensional random walk, I wanted to investigate what happens when the regularity of the lattice itself is removed.
+
+For the uniform tilings, every vertex has the same local arrangement, meaning that the walker encounters the same geometry throughout the entire space. I wanted to see whether changing this so that the local geometry varies across the lattice would produce a measurable change in the behaviour of the random walk.
+
+I therefore investigated **three different non-uniform tilings**, where different types of polygons and local arrangements occur throughout the lattice.
+
+The main questions I wanted to investigate were:
+
+- Does the average distance still follow a √n relationship?
+- Does changing the local geometry affect the power-law exponent?
+- Does the distribution of final distances change?
+- Does the spatial distribution of the walkers change?
+- Do non-uniform tilings still behave almost identically to a standard two-dimensional random walk?
+
+As with the uniform tilings, the simulations were kept consistent so that the results could be compared directly. Each simulation used **1000 walkers**, with each walker taking **5000 steps**.
+
+---
+
+## Trihexagonal Tiling
+
+The first non-uniform tiling I investigated was the **trihexagonal tiling**.
+
+Unlike the uniform tilings considered previously, the trihexagonal tiling contains both triangles and hexagons. This means that the local geometry encountered by the walker is no longer identical everywhere.
+
+This provides a useful first test of whether introducing variation into the underlying geometry can affect the behaviour of a random walk.
+
+### Average Distance vs Steps
+
+| | |
+|---|
+| ![image](trihexagonal_average_distance.png) |
+
+The average distance from the origin increases throughout the simulation, with no plateau as the tiling is unbounded and the walkers can continue moving away from the origin.
+
+After 5000 steps, the average distance is approximately **64.94**.
+
+The overall shape of the graph is very similar to the results from the uniform tilings. The gradient decreases as the number of steps increases, suggesting that the average distance is again following a square-root type relationship.
+
+This is already an interesting result, as introducing non-uniformity into the geometry does not appear to have fundamentally changed the way the average distance grows.
+
+### Log-Log Average Distance
+
+| | |
+|---|
+| ![image](trihexagonal_loglog.png) |
+
+The log-log plot gives a power-law relationship of
+
+$$
+r\propto n^{0.5141}
+$$
+
+with
+
+$$
+R^2=0.99917.
+$$
+
+The measured exponent of **0.5141** is slightly larger than the theoretical value of **0.5** for a standard two-dimensional random walk.
+
+However, the difference is still relatively small. The exponent remains close enough to $0.5$ to suggest that the underlying $\sqrt n$ behaviour has largely been preserved despite the non-uniform geometry.
+
+The extremely high \(R^2\) value of **0.99917** also shows that the power-law relationship provides an excellent fit to the data.
+
+This is particularly interesting when compared with the uniform tilings. The triangular and hexagonal tilings produced exponents of approximately **0.5047** and **0.5073** respectively, while the trihexagonal tiling gives **0.5141**. Although this is a slightly larger deviation from $0.5$, it is still very close to the behaviour of a standard random walk.
+
+### Distribution of Final Distances
+
+| | |
+|---|
+| ![image](trihexagonal_final_distribution.png) |
+
+The distribution of final distances is again right-skewed, with most walkers finishing relatively close to the origin and a smaller number travelling considerably further.
+
+The mean final distance was
+
+$$
+64.94
+$$
+
+while the median was
+
+$$
+58.98.
+$$
+
+As with the uniform tilings, the mean is greater than the median due to the long right-hand tail of the distribution.
+
+The distribution also extends to distances of approximately **250 lattice units**, although only a very small number of walkers reached these distances.
+
+Overall, the distribution remains broadly similar to those produced by the uniform tilings, suggesting that the introduction of non-uniform geometry has not dramatically changed the range of distances reached by the walkers.
+
+### Final Position Density
+
+| | |
+|---|
+| ![image](trihexagonal_final_position_heatmap.png) |
+
+The final position density is concentrated around the origin, with the majority of walkers remaining within a central region. However, unlike the heatmaps from the uniform tilings, the distribution is **not perfectly circular**.
+
+Instead, the density appears somewhat elongated and irregular, with certain directions extending further from the origin than others.
+
+This could be a consequence of the non-uniform geometry of the trihexagonal tiling. Since the walker encounters different local arrangements of triangles and hexagons, the available paths through the lattice are not locally identical everywhere. Although there is no intentional preferred direction in the random walk, these differences in local geometry could introduce small directional effects which accumulate over many steps.
+
+Another possibility is that the different local structures affect how easily walkers can move through different regions of the lattice. This could produce the slightly stretched or uneven shape seen in the heatmap rather than the approximately circular distribution expected from a standard two-dimensional random walk.
+
+However, this difference in shape does not appear to correspond to a major change in the overall scaling behaviour. The average-distance curve still follows an extremely strong power law with an exponent close to $0.5$.
+
+This suggests that the non-uniform geometry may affect the **shape of the spatial distribution** more strongly than it affects the fundamental relationship between distance and the number of steps.
+
+### Initial Findings
+
+The first non-uniform tiling therefore produces a surprisingly similar result to the uniform tilings.
+
+The average distance still follows approximately
+
+$$
+r\propto\sqrt n,
+$$
+
+with a measured exponent of
+
+$$
+\alpha=0.5141.
+$$
+
+Although this is slightly further from $0.5$ than the exponents measured for the triangular and hexagonal tilings, it is still remarkably close to the standard random-walk value.
+
+At the same time, the final-position heatmap shows a more noticeable difference. Rather than forming an approximately circular distribution, the walkers produce a somewhat elongated and irregular density pattern.
+
+This suggests that non-uniform geometry may not immediately change the fundamental scaling law of the random walk, but it may begin to affect the finer details of how the walkers are distributed across space.
+
+The remaining two non-uniform tilings will therefore show whether this is a feature specific to the trihexagonal tiling or whether it represents a more general effect of removing the regularity of the lattice.
+
+
+### Snub Square Tiling
+
+The first non-uniform tiling investigated is the **snub square tiling**. Unlike the uniform triangular and hexagonal tilings, the snub square tiling contains different local geometries, meaning that the number and arrangement of possible directions can vary depending on the walker's position.
+
+The average-distance graph still shows a very clear increase in distance as the number of steps increases. Although the curve is not perfectly smooth, it follows a very similar overall shape to the results obtained from the uniform tilings.
+
+The final distribution of distances is also broadly similar to that of a standard two-dimensional random walk. The mean final distance is approximately
+
+$$
+r_{\text{mean}} \approx 60.74
+$$
+
+while the median is approximately
+
+$$
+r_{\text{median}} \approx 55.67.
+$$
+
+As with the previous tilings, the mean is greater than the median because of the long tail of walkers that happen to finish considerably further from the origin.
+
+The log-log plot gives a particularly interesting result. A power-law fit gives
+
+$$
+r \propto n^{0.4904}
+$$
+
+with
+
+$$
+R^2 = 0.99959.
+$$
+
+The exponent of $0.4904$ is extremely close to the standard random-walk value of
+
+$$
+\alpha = \frac{1}{2}.
+$$
+
+This suggests that, despite the local irregularity introduced by the snub square tiling, the large-scale behaviour of the random walk remains very similar to that of a standard two-dimensional random walk.
+
+The final position heatmap does, however, show a more noticeable difference from the uniform tilings. Rather than forming a perfectly circular distribution around the origin, the density has a more irregular and slightly distorted shape. There are also several regions of increased density extending further from the centre.
+
+This could be a consequence of the non-uniform local geometry of the tiling. Since the available directions and local arrangements are not identical everywhere, some directions may be slightly more favourable for a walker to travel through than others. Over many steps, these small local effects could accumulate, producing the asymmetric or non-circular structure visible in the heatmap.
+
+However, the overall distribution is still centred around the origin and remains broadly spread in all directions. This suggests that the irregular geometry affects the detailed spatial distribution of the walkers more strongly than it affects the fundamental scaling of their average distance.
+
+Overall, the snub square tiling therefore provides an interesting first example of how introducing non-uniformity can alter the appearance of a random walk without necessarily changing its underlying large-scale behaviour.
+
+### Conclusion
+
+The results from the snub square tiling show that introducing non-uniform geometry does not immediately produce a major change in the behaviour of the random walk.
+
+The snub square tiling produces:
+
+- A clear increase in average distance with the number of steps.
+- Power-law behaviour very close to $r \propto \sqrt{n}$.
+- A power-law exponent of $\alpha \approx 0.4904$.
+- A very high $R^2$ value of $0.99959$ for the power-law fit.
+- A final-distance distribution broadly similar to that of a standard two-dimensional random walk.
+- A noticeably less circular final-position density than the uniform tilings.
+
+The exponent being slightly below $0.5$ is particularly interesting. Although the difference is small, it raises the question of whether increasingly irregular tilings could produce progressively larger deviations from the standard random-walk behaviour.
+
+The non-circular structure of the heatmap also suggests that the geometry may have a more noticeable effect on the spatial distribution of walkers than on their average distance from the origin.
+
+This provides the first indication that non-uniform geometry may influence the **directional and spatial properties** of a random walk while leaving its overall $\sqrt{n}$ scaling largely intact.
+
+The next non-uniform tiling can therefore be used to investigate whether these effects are specific to the snub square tiling or whether they are a more general consequence of introducing irregularity into the underlying space.
+
+## Rhombitrihexagonal Tiling
+
+The next non-uniform tiling I tested was the **rhombitrihexagonal tiling**. This tiling is made up of triangles and hexagons, giving it a different local structure from the previous tilings.
+
+### Average Distance
+
+Having established how the average distance changes with both the number of steps and the tiling, I first looked at the average distance travelled by the random walkers.
+
+As with the previous tilings, the average distance initially increases rapidly before gradually slowing down. After 5000 steps, the average distance from the origin is approximately **63 lattice units**.
+
+The overall shape of the graph is remarkably similar to that of a standard random walk, despite the underlying space being a non-uniform tiling. This suggests that the different local geometry of the rhombitrihexagonal tiling does not significantly change the large-scale behaviour of the random walk.
+
+### Distribution of Final Distances
+
+I then looked at the distribution of the final distances from the origin after 5000 steps.
+
+The mean final distance was
+
+\[
+\boxed{62.93}
+\]
+
+while the median was
+
+\[
+\boxed{58.83}.
+\]
+
+The distribution is slightly right-skewed, with most walkers ending relatively close to the origin while a smaller number travel significantly further away. This is consistent with the behaviour expected from a random walk, where individual walkers can deviate substantially from the average.
+
+### Final Position Density
+
+The final position density heatmap shows where the 1000 walkers were most likely to end after 5000 steps.
+
+The highest density is concentrated around the origin, with the density gradually decreasing as the distance from the origin increases. There is also some variation in the shape of the distribution caused by the underlying rhombitrihexagonal geometry.
+
+However, despite these local variations, the overall distribution is approximately radially symmetric and has the same general appearance as the distribution produced by a conventional random walk.
+
+This is another indication that the large-scale behaviour of the random walk is largely independent of the precise local structure of the tiling.
+
+### Finding the Power Law
+
+Finally, I plotted the average distance against the number of steps on a log-log graph. This allows the relationship between the distance and number of steps to be examined more easily.
+
+The data follows an extremely strong linear relationship on the log-log plot, giving a power-law fit of
+
+\[
+r \propto n^{0.5074}
+\]
+
+with
+
+\[
+R^2 = 0.99944.
+\]
+
+The exponent is extremely close to
+
+\[
+\frac{1}{2},
+\]
+
+which is the exponent expected for a standard two-dimensional random walk.
+
+This is particularly interesting because the rhombitrihexagonal tiling is non-uniform, yet the random walk still follows almost exactly the same square-root scaling behaviour. Therefore, at large scales, the random walk appears to behave essentially like a conventional random walk despite the non-uniform geometry of the underlying space.
+
+## Comparing the Non-Uniform Tilings
+
+Having investigated the three non-uniform tilings individually, I can now compare their behaviour directly. The three tilings considered were the trihexagonal, rhombitrihexagonal and snub square tilings. Each simulation used 1000 random walkers, with each walker taking 5000 steps.
+
+### Average Distance
+
+The average distance from the origin is very similar for all three tilings at small numbers of steps. This is expected, as at short times the random walk has not travelled far enough for the large-scale structure of the tiling to have much effect.
+
+As the number of steps increases, however, the differences between the tilings become more noticeable. After 5000 steps, the trihexagonal tiling produces the greatest average distance from the origin, at approximately 64.94 lattice units. The rhombitrihexagonal tiling follows at approximately 62.93, while the snub square tiling produces the smallest average distance, at approximately 60.74.
+
+This suggests that the geometry of the tiling does have an effect on the rate at which the random walk spreads, although the overall behaviour remains remarkably similar between the three tilings.
+
+### Distribution of Final Distances
+
+The distributions of final distances also show broadly similar behaviour. All three produce a wide distribution of distances rather than every walker ending at approximately the same distance from the origin.
+
+For the rhombitrihexagonal tiling, the mean final distance is 62.93 while the median is 58.83. The mean being greater than the median indicates a right-skewed distribution, caused by a smaller number of walkers travelling substantially further from the origin.
+
+The same general behaviour occurs across the other tilings. The trihexagonal tiling has a mean final distance of 64.94 and a median of 58.98, while the snub square tiling has a mean of 60.74 and a median of 55.67.
+
+### Power-Law Behaviour
+
+The log-log plots show that all three tilings follow an extremely strong power-law relationship of the form
+
+$$
+r \propto n^\alpha
+$$
+
+where $r$ is the average distance from the origin and $n$ is the number of steps.
+
+The fitted exponents are:
+
+| Tiling | Power-law exponent $\alpha$ | $R^2$ |
+|---|---:|---:|
+| Trihexagonal | 0.5141 | 0.99917 |
+| Rhombitrihexagonal | 0.5074 | 0.99944 |
+| Snub square | 0.4904 | 0.99959 |
+
+All three values are extremely close to the unbounded random-walk value of $\alpha = 0.5$. In particular, the rhombitrihexagonal tiling gives $\alpha = 0.5074$, while the snub square tiling gives $\alpha = 0.4904$.
+
+The $R^2$ values are all greater than 0.999, showing that a power law provides an exceptionally good description of the data over the range tested.
+
+### Overall Comparison
+
+The most striking result is how similar the three tilings are despite having different local geometries. The trihexagonal tiling produces the largest average distance and the largest exponent, while the snub square tiling produces the smallest average distance and exponent. The rhombitrihexagonal tiling lies between them.
+
+However, all three remain extremely close to the classical random-walk scaling relationship
+
+$$
+r \propto \sqrt{n}.
+$$
+
+This suggests that changing the local geometry of the non-uniform tiling changes the rate of spreading slightly, but does not fundamentally change the diffusive nature of the random walk. At large scales, the walkers appear to retain the same $\sqrt{n}$ behaviour as an ordinary random walk, despite moving across considerably more complicated geometries.
+
+---
+
+## Overall Comparison
+
+Having investigated random walks on a standard lattice, followed by uniform tilings and finally non-uniform tilings, I can now compare how changing the underlying geometry affects the behaviour of the walk.
+
+### Standard Random Walk
+
+The standard random walk provides the baseline for the investigation. In an unbounded two-dimensional random walk, the average distance from the origin follows the familiar relationship
+
+$$
+r \propto \sqrt{n},
+$$
+
+where $r$ is the average distance from the origin and $n$ is the number of steps.
+
+This gives a power-law exponent of approximately
+
+$$
+\alpha = 0.5.
+$$
+
+The standard walk therefore provides a useful reference against which the more complicated geometries can be compared.
+
+### Uniform Tilings
+
+The next step was to replace the standard lattice with different uniform tilings. Although these tilings have different local structures and numbers of neighbouring vertices, the overall behaviour remained remarkably similar.
+
+The average distance continued to increase approximately as $\sqrt{n}$, with the main differences appearing in the constant of proportionality rather than in the overall scaling behaviour.
+
+This suggested that the square-root behaviour of a random walk is not specific to the standard square lattice.
+
+### Non-Uniform Tilings
+
+The investigation was then extended to non-uniform tilings, where the local geometry is no longer the same everywhere. The trihexagonal, rhombitrihexagonal and snub square tilings were tested.
+
+Once again, the results showed remarkably similar behaviour. The fitted power-law exponents were:
+
+| Tiling | Power-law exponent $\alpha$ |
+|---|---:|
+| Trihexagonal | 0.5141 |
+| Rhombitrihexagonal | 0.5074 |
+| Snub square | 0.4904 |
+
+All three values are extremely close to the standard random-walk value of $0.5$. The fits were also extremely strong, with all three having $R^2 > 0.999$.
+
+This is particularly interesting because these tilings have considerably more complicated local structures than a standard square lattice. Despite this, the large-scale behaviour of the random walk remains almost unchanged.
+
+### Comparing the Three Cases
+
+The progression from a standard random walk to uniform tilings and then non-uniform tilings therefore produces an interesting result.
+
+As the geometry becomes more complicated:
+
+$$
+\text{standard lattice}
+\rightarrow
+\text{uniform tilings}
+\rightarrow
+\text{non-uniform tilings},
+$$
+
+The exact behaviour of the walk changes slightly, but the fundamental scaling relationship remains approximately
+
+$$
+r \propto \sqrt{n}.
+$$
+
+The main effect of changing the geometry appears to be changing the constants associated with the walk, rather than fundamentally changing its scaling exponent.
+
+This means that, despite the increasingly complicated local geometry, random walks appear to exhibit a strong degree of universality at large scales.
+
+### What This Suggests
+
+The results suggest that the $\sqrt{n}$ behaviour of random walks is much more general than the standard random walk on a square lattice might initially suggest.
+
+The local geometry clearly matters: the different tilings produce slightly different average distances and slightly different fitted exponents. However, these differences are small compared with the overall similarity in behaviour.
+
+This raises a further question: **does this behaviour continue when the space itself is curved?**
+
+The next possible extension of the investigation would therefore be to study random walks on genuinely curved surfaces, such as a sphere or other curved geometries. This would allow me to investigate whether the same large-scale behaviour survives when the underlying space is no longer flat.
 
 ---
 
