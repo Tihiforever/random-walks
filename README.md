@@ -1,20 +1,20 @@
 # Random Walks on Curved Surfaces
 
-An exploration of Random Walks and how they are used and can be manipulated.
+An exploration of random walks and how changing the geometry they move through affects their behaviour. I started this project looking at a basic random walk and have gradually changed the space underneath it, from an unbounded plane to a torus and then to different regular and non-uniform tilings.
 
 ---
 
 ## Work Log
 
-**09/02/26:** We decided that I would program a random walk 2D generator, after halfterm to discuss on a Microsoft Teams call what else can be added and done.
+**09/02/26:** We decided that I would program a random walk 2D generator, after half term to discuss on a Microsoft Teams call what else can be added and done.
 
-**10/02/26:** Created my git repository and thought about the design of it and after a short discussion with my maths teacher he suggested I learn polar coordinates and that made me think about how this project is like an ant walking on a piece of paper that is twisted in lots of different ways, as that's how random walking in a 2D shape is, as the 2D grid when in a non-Euclidean form allows for different rules of shapes when a 2D plane is twisted and stretched in a 3D or higher dimension, like how some scientists think the universe is. This allowed me to think about how I would program this.
+**10/02/26:** Created my git repository and thought about the design of it and after a short discussion with my maths teacher he suggested I learn polar coordinates and that made me think about how this project is like an ant walking on a piece of paper that is twisted in lots of different ways, as that's how random walking in a 2D shape is, as the 2D grid when in a non-Euclidean form allows for different rules of shapes when a 2D plane is twisted and stretched in a 3D or higher dimension, similar to the way curved spaces can be used to think about the geometry of the universe. This gave me the first idea for how I wanted to approach the programming side of the project.
 
-**11/03/26:** Finished everything outlined, waiting for a response as to what to do next. I have visualised random walking on a 3D torus, but it doesn't work truly as the walker can go inside the torus, which I visualised in Desmos ([here](https://www.desmos.com/3d/j2sfzxhzr9)).
+**11/03/26:** Finished everything outlined, waiting for a response as to what to do next. I also visualised random walking on a 3D torus, although this did not work properly because the walker could move through the surface and inside the torus. I visualised this in Desmos ([here](https://www.desmos.com/3d/j2sfzxhzr9)).
 
 **17/03/26:** Had a discussion on Microsoft Teams explaining my work and the basics of a random walk, and how it is utilised, like in modelling gas particles in physics, taking the walker to be a particle in a gas, it moves around randomly. We also discussed how a random walk in 1D follows a binomial distribution and, after an infinite number of steps, approaches a normal distribution. After this, we discussed what to do next, where it was decided to record lots of random walkers and their distances from an origin and then plot this data relative to the number of steps taken and explore the trend and how the number of steps correlates to the distance from the origin. Then we discussed comparing this infinite plane to a bounded 2D torus and how the distance from the start changes when the walker can "loop" around, and graphing this to compare the difference.
 
-**23/03/26:** Created a second visualisation that allowed more customisability like adding extra walkers and changing step size, along with changing the number of steps it can complete. Annoyingly, I can't upload the files, only screenshots, as this GitHub repo is set to the first prototype and idk how to change it, but I will try to fix this.
+**23/03/26:** Created a second visualisation that allowed more customisability like adding extra walkers and changing step size, along with changing the number of steps it can complete. Annoyingly, I couldn't upload the files themselves at this point, only screenshots, as this GitHub repo was still set to the first prototype. I planned to fix this later.
 
 | | |
 |---|---|
@@ -38,13 +38,13 @@ An exploration of Random Walks and how they are used and can be manipulated.
 
 **01/09/26:** Created a Python script and adjusted the old analysis script so that I could simulate the torus and generate the graphs of all the data.
 
-**02/09/26** Wrote up my findings on how the average distance from an origin changes based on the size of the torus over a set number of sets.
+**02/09/26** Wrote up my findings on how the average distance from the origin changes with the size of the torus over a fixed number of steps.
 
-**03/09/26** Used all of my findings to try and formulate a skeleton of a formula that relates to n (the number of steps) and L (the torus size). I did this to gain insight into what being an academic researcher would be like in the future. I then began to write the code for a uniform tiling and how a random walk would change along different types of non-standard lattices.
+**03/09/26** Used all of my findings to try and formulate a skeleton of a formula that relates to n (the number of steps) and L (the torus size). I did this partly to get an idea of what doing this kind of mathematical research might be like in the future. I then began to write the code for a uniform tiling and how a random walk would change along different types of non-standard lattices.
 
-**04/09/26** I used the code that I had written and improved with the use of AI to make the simulation run faster, and it allowed me to gain an understanding of better programming practices. I then used this data to generate all the graphs needed for the write-up.
+**04/09/26** I used the code I had written and improved it with the use of AI to make the simulations run faster. This also helped me understand some better programming practices and how the code could be made more efficient. I then used this data to generate all the graphs needed for the write-up.
 
-**05/09/26** Started and finished the write-up of all my findings comparing different types of tilings to a regular random walk.
+**05/09/26** Started and finished the write-up of my findings, comparing the different types of tilings with a regular random walk.
 
 ---
 
@@ -104,13 +104,13 @@ From tilings, I then discovered [tessellations](https://en.wikipedia.org/wiki/Te
 | 5000 | 0.4941 | 0.5000 | 0.99965 |
 | 10000 | 0.5108 | 0.5000 | 0.99967 |
 
-All gradients are within 2% of the theoretical value of **0.5**, with R² > 0.999 in every case, confirming the √n relationship.
+All gradients are within 2% of the theoretical value of **0.5**, with R² > 0.999 in every case, confirming the \(\sqrt n\) relationship.
 
 ---
 
-## Mean Final Distance vs √n
+## Mean Final Distance vs \(\sqrt n\)
 
-| Steps (n) | Mean final distance | √n (theory) | % error |
+| Steps (n) | Mean final distance | \(\sqrt n\) (theory) | % error |
 |-----------|-------------------|-------------|---------|
 | 100 | 9.02 | 10.00 | 9.8% |
 | 500 | 19.42 | 22.36 | 13.1% |
@@ -118,13 +118,13 @@ All gradients are within 2% of the theoretical value of **0.5**, with R² > 0.99
 | 5000 | 61.65 | 70.71 | 12.8% |
 | 10000 | 91.17 | 100.00 | 8.8% |
 
-The mean consistently sits slightly below √n, this is expected as distance is always positive and the distribution is right-skewed, pulling the mean below the RMS value.
+The mean consistently sits slightly below \(\sqrt n\), this is expected as distance is always positive and the distribution is right-skewed, pulling the mean below the RMS value.
 
 ---
 
 ## Overall Data Summary
 
-The three plots below show all five runs together. The combined line graph shows every run following the same √n curve regardless of step count. The two scatter plots show the average distance per run with ±1 standard deviation error bars, with the first using only the final step distance and the second averaging across all steps.
+The three plots below show all five runs together. The combined line graph shows every run following the same \(\sqrt n\) curve regardless of step count. The two scatter plots show the average distance per run with ±1 standard deviation error bars, with the first using only the final step distance and the second averaging across all steps.
 
 | Combined line — all runs |
 |--------------------------|
@@ -144,7 +144,7 @@ The three plots below show all five runs together. The combined line graph shows
 
 ## Average Distance vs Steps
 
-The average distance grows as a smooth √n curve in all five runs. The blue line is the simulation data and the dashed line is the √n reference.
+The average distance grows as a smooth \(\sqrt n\) curve in all five runs. The blue line is the simulation data and the dashed line is the \(\sqrt n\) reference.
 
 | 100 steps | 500 steps |
 |-----------|-----------|
@@ -158,7 +158,7 @@ The average distance grows as a smooth √n curve in all five runs. The blue lin
 
 ## Log-Log Plots
 
-A straight line with a gradient of 0.5 on a log-log plot is the mathematical proof of √n growth.
+A straight line with a gradient of 0.5 on a log-log plot is the mathematical proof of \(\sqrt n\) growth.
 
 | 100 steps | 500 steps |
 |-----------|-----------|
@@ -186,7 +186,7 @@ The final distances follow a right-skewed distribution in all runs, with the pea
 
 ## Final Position Heatmaps
 
-The density of final positions forms a symmetric blob centred on the origin. The dotted white circle marks the expected RMS distance √n, the high-density region sits inside this circle in every run, visually confirming the √n relationship.
+The density of final positions forms a symmetric blob centred on the origin. The dotted white circle marks the \(\sqrt n\) reference distance, the high-density region sits inside this circle in every run, visually confirming the \(\sqrt n\) relationship.
 
 | 100 steps | 500 steps |
 |-----------|-----------|
@@ -200,20 +200,19 @@ The density of final positions forms a symmetric blob centred on the origin. The
 
 ## Key Result
 
-On an unbounded 2D plane, the average distance from the origin grows proportional to **√n** regardless of the number of steps taken. This is confirmed by:
+On an unbounded 2D plane, the average distance from the origin grows approximately proportional to **√n**. This is confirmed by:
 - Log-log gradients all within 2% of 0.5
 - R² > 0.999 across all runs
-- Radially symmetric final position density with spread matching √n
-- Right-skewed final distance distribution with mean tracking √n
+- Radially symmetric final position density with spread matching \(\sqrt n\)
+- Right-skewed final distance distribution with mean tracking \(\sqrt n\)
 
 This serves as the **baseline** for comparison against the bounded 2D torus, where the wrapping geometry is expected to cause the distance to plateau rather than grow indefinitely.
 
 ---
----
 
 # Results - 2D Bounded Torus
 
-After confirming the √n relationship on the unbounded 2D plane, I wanted to see what happens when the plane is made finite but still allows the walker to move continuously without hitting an actual edge. This led me to the idea of a bounded 2D torus.
+After confirming the \(\sqrt n\) relationship on the unbounded 2D plane, I wanted to see what happens when the plane is made finite but still allows the walker to move continuously without hitting an actual edge. This led me to the idea of a bounded 2D torus.
 
 Instead of stopping the walker when it reaches an edge, the edges are joined together. This means that if a walker moves past the maximum x coordinate, it reappears at the minimum x coordinate, and the same happens in the y direction. This makes the surface bounded but means the walker can continue walking forever.
 
@@ -263,9 +262,9 @@ $$
 4.21
 $$
 
-This is the first major difference from the unbounded plane. On the unbounded plane the average distance continues to increase as the number of steps increases, following the √n relationship. On the size 5 torus, the average distance reaches a plateau because the walker cannot keep getting further away from the origin.
+This is the first major difference from the unbounded plane. On the unbounded plane the average distance continues to increase as the number of steps increases, following the \(\sqrt n\) relationship. On the size 5 torus, the average distance reaches a plateau because the walker cannot keep getting further away from the origin.
 
-This suggests that there are two different stages to the random walk on the torus. At the beginning, the walker behaves similarly to the unbounded random walk because it has not yet explored enough of the torus for the boundaries to have much effect. Eventually, however, the finite size of the torus becomes important and the average distance settles towards a constant value.
+This suggests to me that there are two different stages to the random walk on the torus. At the beginning, the walker behaves similarly to the unbounded random walk because it has not yet explored enough of the torus for the boundaries to have much effect. Eventually, however, the finite size of the torus becomes important and the average distance settles towards a constant value.
 
 ### Log-Log Plot
 
@@ -288,7 +287,7 @@ This is very different from the gradient of approximately 0.5 found for the unbo
 
 However, I don't think it would be correct to say that the torus has a random-walk exponent of 0.0133. The graph clearly isn't a straight line. The initial part of the graph increases and then becomes almost horizontal, so fitting one power law across the whole simulation doesn't describe the actual behaviour particularly well.
 
-Instead, this shows that the √n relationship breaks down on a small bounded torus. The important feature is the transition from growth to a plateau.
+Instead, this shows that the \(\sqrt n\) relationship breaks down on a small bounded torus. The important feature is the transition from growth to a plateau.
 
 ### Distribution of Final Distances
 
@@ -544,7 +543,7 @@ The next torus I tested had a size of 100, giving a coordinate range of -100 to 
 
 <img width="500" height="500" alt="100_final_position_heatmap" src="https://github.com/user-attachments/assets/e9b0fbf3-9a84-4e6a-8654-664b27d0f4cb" />
 
-The heatmap is much more spread out than for the smaller tori. The walkers are distributed across a large proportion of the available area, with no obvious concentration around the origin. This suggests that after 5000 steps the walkers have not yet fully explored the torus.
+The heatmap is much more spread out than for the smaller tori. The walkers are distributed across a large proportion of the available area, with no obvious concentration around the origin. This suggests to me that after 5000 steps the walkers have not yet fully explored the torus.
 
 Because the edges are joined together, the corners of this graph are still not simply the furthest points from the origin. The distance is calculated using the shortest route around the torus, so moving past one edge effectively brings the walker back around from the opposite side.
 
@@ -600,7 +599,7 @@ This is extremely close to the gradient of approximately 0.5 expected for an unb
 
 The very high \(R^2\) value also shows that a power law provides an excellent fit to the data. Unlike the smaller tori, there is no significant flattening towards the end of the graph, so the effects of the finite boundaries are not yet strong enough to noticeably change the relationship.
 
-This suggests that for a sufficiently large torus, the random walk can behave almost identically to the unbounded case over the timescale being tested.
+This suggests to me that for a sufficiently large torus, the random walk can behave almost identically to the unbounded case over the timescale being tested.
 
 ### Distribution of Final Distances
 
@@ -613,7 +612,7 @@ The mean final distance was **58.97**, while the median was **57.85**.
 
 The distribution is centred around a much larger distance than for the previous tori, reflecting the fact that the walkers have been able to spread much further from the origin. However, unlike the smaller tori, the maximum possible distance is not acting as a strong constraint on the walkers during this simulation.
 
-Overall, the size 100 torus behaves very similarly to the unbounded plane over the 5000 steps tested. The average distance continues to increase, the log-log plot has a gradient of **0.4875**, very close to the theoretical value of 0.5, and the \(R^2\) value of **0.99813** indicates an extremely strong power-law relationship. This suggests that increasing the size of the torus delays the point at which its finite boundaries begin to affect the random walk.
+Overall, the size 100 torus behaves very similarly to the unbounded plane over the 5000 steps tested. The average distance continues to increase, the log-log plot has a gradient of **0.4875**, very close to the theoretical value of 0.5, and the \(R^2\) value of **0.99813** indicates an extremely strong power-law relationship. This suggests to me that increasing the size of the torus delays the point at which its finite boundaries begin to affect the random walk.
 
 ---
 
@@ -722,7 +721,7 @@ The mean final distances for the different torus sizes were approximately:
 | 100 | 58.97 |
 | 200 | 62.57 |
 
-This shows that increasing the size of the torus allows the walkers to spread further from the origin. However, the increase becomes much smaller between sizes 100 and 200. This suggests that once the torus is sufficiently large, increasing its size further has little effect over the 5000 steps being tested.
+This shows that increasing the size of the torus allows the walkers to spread further from the origin. However, the increase becomes much smaller between sizes 100 and 200. This suggests to me that once the torus is sufficiently large, increasing its size further has little effect over the 5000 steps being tested.
 
 ### Power-Law Exponent
 
@@ -786,7 +785,7 @@ $$
 58.97 \rightarrow 62.57.
 $$
 
-This suggests that the random walks are approaching the behaviour expected on an unbounded plane. Once the torus is large compared with the distance typically travelled by a walker, making it even larger has relatively little effect over the fixed 5000-step simulation.
+This suggests to me that the random walks are approaching the behaviour expected on an unbounded plane. Once the torus is large compared with the distance typically travelled by a walker, making it even larger has relatively little effect over the fixed 5000-step simulation.
 
 ### Overall Conclusion
 
@@ -931,7 +930,7 @@ for some constant \(C\).
 
 I therefore needed a function which is approximately linear near \(x=0\), but approaches a constant as \(x\) becomes large.
 
-The hyperbolic tangent has exactly these properties:
+The hyperbolic tangent has the two properties I needed:
 
 $$
 \tanh x\approx x
@@ -945,7 +944,7 @@ $$
 \qquad\text{as }x\rightarrow\infty.
 $$
 
-This led me to try
+This led me to try the simple model
 
 $$
 g(x)=C\tanh(ax),
@@ -962,7 +961,7 @@ $$
 gives
 
 $$
-/frac{r}{L}=C\tanh\left(\frac{a\sqrt n}{L}\right)
+\frac{r}{L}=C\tanh\left(\frac{a\sqrt n}{L}\right)
 $$
 
 and hence
@@ -1069,7 +1068,7 @@ For this investigation, I tested two different uniform tilings and compared thei
 
 The main questions I wanted to investigate were:
 
-- Does the average distance still follow a √n relationship?
+- Does the average distance still follow a \(\sqrt n\) relationship?
 - How does changing the number of possible directions affect the average distance?
 - Does the distribution of final distances change?
 - Does the spatial distribution of the walkers change with the lattice?
@@ -1096,9 +1095,9 @@ The average distance from the origin increases throughout the simulation. Unlike
 
 The average distance reaches approximately **63.4** after 5000 steps.
 
-The graph has a similar overall shape to the √n relationship observed for the square lattice. The rate of increase becomes smaller as the number of steps increases, which is consistent with square-root growth.
+The graph has a similar overall shape to the \(\sqrt n\) relationship observed for the square lattice. The rate of increase becomes smaller as the number of steps increases, which is consistent with square-root growth.
 
-This suggests that changing the local structure of the lattice has not removed the underlying random-walk behaviour.
+This suggests to me that changing the local structure of the lattice has not removed the underlying random-walk behaviour.
 
 ### Log-Log Plot
 
@@ -1123,9 +1122,9 @@ The difference from 0.5 is approximately **0.0047**, meaning that the measured e
 
 The \(R^2\) value of **0.99913** also shows that the power-law relationship provides an extremely strong fit to the data.
 
-This is particularly interesting because the triangular lattice has a different local structure from the square lattice and gives the walker six possible directions instead of four. Despite this, the exponent describing how the distance grows with the number of steps remains approximately the same.
+I found this particularly interesting because the triangular lattice has a different local structure from the square lattice and gives the walker six possible directions instead of four. Despite this, the exponent describing how the distance grows with the number of steps remains approximately the same.
 
-This suggests that the change in lattice affects the scale of the random walk rather than fundamentally changing the relationship between distance and the number of steps.
+This suggests to me that the change in lattice affects the scale of the random walk rather than fundamentally changing the relationship between distance and the number of steps.
 
 ### Distribution of Final Distances
 
@@ -1215,7 +1214,7 @@ After 5000 steps, the average distance is approximately **64.26**.
 
 The overall shape of the graph is very similar to both the square and triangular lattice results. The gradient decreases as the number of steps increases, suggesting that the distance is again following a square-root type relationship.
 
-### Log-Log Average Distance
+### Log-Log Plot
 
 <img width="1000" height="600" alt="hexagon_loglog" src="https://github.com/user-attachments/assets/c2f7ecd3-0fad-4846-bd95-c4b2c3a28b6e" />
 
@@ -1235,7 +1234,7 @@ The measured exponent of **0.5073** is very close to the theoretical value of **
 
 The difference from 0.5 is only **0.0073**, while the extremely high \(R^2\) value shows that the power-law model fits the data very closely.
 
-This is particularly interesting because the hexagonal tiling has only 3 possible directions at each vertex, compared with 4 for the square lattice and 6 for the triangular lattice. Despite this difference, the exponent remains very close to \(0.5\).
+I found this particularly interesting because the hexagonal tiling has only 3 possible directions at each vertex, compared with 4 for the square lattice and 6 for the triangular lattice. Despite this difference, the exponent remains very close to \(0.5\).
 
 ### Distribution of Final Distances
 
@@ -1259,7 +1258,7 @@ As with the triangular tiling, the mean is greater than the median due to the lo
 
 The distribution extends to distances of over **200 lattice units**, although only a very small number of walkers reached these distances.
 
-### Final Position Density
+### Final Position Heatmap
 
 <img width="500" height="500" alt="hexagon_final_position_heatmap" src="https://github.com/user-attachments/assets/1ac62a7e-833f-4f3a-9037-10559020c711" />
 
@@ -1291,7 +1290,7 @@ $$
 r\propto n^{0.5047}.
 $$
 
-Both exponents are extremely close to \(0.5\). This suggests that changing the number of neighbours changes the scale of the random walk, but may not change its fundamental dependence on the number of steps.
+Both exponents are extremely close to \(0.5\). This suggests to me that changing the number of neighbours changes the scale of the random walk, but may not change its fundamental dependence on the number of steps.
 
 The next step is therefore to compare the two uniform tilings directly and see whether the differences between them are significant despite their almost identical power-law exponents.
 
@@ -1325,7 +1324,7 @@ $$
 
 Both values are extremely close to the standard random-walk value of $0.5$. The log-log plots are also almost perfectly linear, with $R^2$ values above $0.999$.
 
-This suggests that, despite the different local geometry of the triangular and hexagonal tilings, the random walks behave almost identically to a standard two-dimensional random walk when viewed on a large scale.
+This suggests to me that, despite the different local geometry of the triangular and hexagonal tilings, the random walks behave almost identically to a standard two-dimensional random walk when viewed on a large scale.
 
 The individual paths are constrained by the geometry of their respective tilings, but these local differences appear to average out over many steps. The overall statistical behaviour therefore remains essentially the same: the average distance grows approximately as $\sqrt{n}$.
 
@@ -1346,9 +1345,9 @@ Both the triangular and hexagonal tilings produce:
 |<img width="1000" height="600" alt="comparison_loglog" src="https://github.com/user-attachments/assets/6eca7c10-e404-4c3f-92d2-e405ae0ada5d" /> |
 | <img width="1000" height="600" alt="comparison_average_distance" src="https://github.com/user-attachments/assets/68c7f036-8789-4de1-b7c7-a41f2c23ecc1" /> |
 
-This provides a strong baseline for the next stage of the investigation. If regular triangular and hexagonal geometries both reproduce the familiar behaviour of a standard random walk, it becomes interesting to ask what happens when the regularity of the space is removed.
+This gives a useful baseline for the next stage of the investigation. If these regular geometries all produce the same large-scale behaviour, the next thing I wanted to know was whether removing that regularity would make a bigger difference.
 
-The next step is therefore to investigate **non-uniform tilings**, where the local geometry varies across the space, and determine whether this can produce a measurable change in the behaviour of the random walk.
+This gave me the next question for the project: if regular tilings still give the same large-scale behaviour, what happens when the local geometry is no longer the same everywhere? This led me to investigate **non-uniform tilings**.
 
 # Results - Non-Uniform Tilings
 
@@ -1360,7 +1359,7 @@ I therefore investigated **three different non-uniform tilings**, where differen
 
 The main questions I wanted to investigate were:
 
-- Does the average distance still follow a √n relationship?
+- Does the average distance still follow a \(\sqrt n\) relationship?
 - Does changing the local geometry affect the power-law exponent?
 - Does the distribution of final distances change?
 - Does the spatial distribution of the walkers change?
@@ -1374,9 +1373,9 @@ As with the uniform tilings, the simulations were kept consistent so that the re
 
 The first non-uniform tiling I investigated was the **trihexagonal tiling**.
 
-Unlike the uniform tilings considered previously, the trihexagonal tiling contains both triangles and hexagons. This means that the local geometry encountered by the walker is no longer identical everywhere.
+Unlike the uniform tilings considered previously, the trihexagonal tiling contains both triangles and hexagons. This means that the walker no longer encounters exactly the same local geometry everywhere.
 
-This provides a useful first test of whether introducing variation into the underlying geometry can affect the behaviour of a random walk.
+This gives me a first test of whether introducing variation into the underlying geometry actually changes the behaviour of a random walk.
 
 ### Average Distance vs Steps
 
@@ -1390,7 +1389,7 @@ The overall shape of the graph is very similar to the results from the uniform t
 
 This is already an interesting result, as introducing non-uniformity into the geometry does not appear to have fundamentally changed the way the average distance grows.
 
-### Log-Log Average Distance
+### Log-Log Plot
 
 <img width="1000" height="600" alt="trihexagonal_loglog" src="https://github.com/user-attachments/assets/939d2360-4ed5-4bb7-85e9-7c6fd547862b" />
 
@@ -1438,9 +1437,9 @@ As with the uniform tilings, the mean is greater than the median due to the long
 
 The distribution also extends to distances of approximately **250 lattice units**, although only a very small number of walkers reached these distances.
 
-Overall, the distribution remains broadly similar to those produced by the uniform tilings, suggesting that the introduction of non-uniform geometry has not dramatically changed the range of distances reached by the walkers.
+Overall, the distribution remains broadly similar to those produced by the uniform tilings. This suggests that the introduction of non-uniform geometry has not dramatically changed the range of distances reached by the walkers.
 
-### Final Position Density
+### Final Position Heatmap
 
 <img width="500" height="500" alt="trihexagonal_final_position_heatmap" src="https://github.com/user-attachments/assets/d616db1d-7d81-4b8e-ad66-764300da21df" />
 
@@ -1455,7 +1454,7 @@ Another possibility is that the different local structures affect how easily wal
 
 However, this difference in shape does not appear to correspond to a major change in the overall scaling behaviour. The average-distance curve still follows an extremely strong power law with an exponent close to $0.5$.
 
-This suggests that the non-uniform geometry may affect the **shape of the spatial distribution** more strongly than it affects the fundamental relationship between distance and the number of steps.
+This suggests to me that the non-uniform geometry may affect the **shape of the spatial distribution** more strongly than it affects the fundamental relationship between distance and the number of steps.
 
 ### Initial Findings
 
@@ -1477,7 +1476,7 @@ Although this is slightly further from $0.5$ than the exponents measured for the
 
 At the same time, the final-position heatmap shows a more noticeable difference. Rather than forming an approximately circular distribution, the walkers produce a somewhat elongated and irregular density pattern.
 
-This suggests that non-uniform geometry may not immediately change the fundamental scaling law of the random walk, but it may begin to affect the finer details of how the walkers are distributed across space.
+This suggests to me that non-uniform geometry may not immediately change the fundamental scaling law of the random walk, but it may begin to affect the finer details of how the walkers are distributed across space.
 
 The remaining two non-uniform tilings will therefore show whether this is a feature specific to the trihexagonal tiling or whether it represents a more general effect of removing the regularity of the lattice.
 
@@ -1502,7 +1501,7 @@ The overall shape of the graph is again very similar to the results from both th
 
 This provides further evidence that introducing non-uniformity into the geometry does not fundamentally change the way the average distance grows.
 
-### Log-Log Average Distance
+### Log-Log Plot
 
 <img width="1000" height="600" alt="rhombitrihexagonal_loglog" src="https://github.com/user-attachments/assets/24b63267-153f-41d0-ad56-e58b9e109548" />
 
@@ -1556,9 +1555,9 @@ $$
 
 As with the other tilings, the mean is greater than the median because of the long right-hand tail of the distribution. A smaller number of walkers travel substantially further from the origin, increasing the mean relative to the median.
 
-Overall, the distribution remains broadly similar to those produced by the other tilings. This suggests that, despite the different local geometry of the snub square tiling, the overall statistical behaviour of the walkers remains similar.
+Overall, the distribution remains broadly similar to those produced by the other tilings. This suggests to me that, despite the different local geometry of the snub square tiling, the overall statistical behaviour of the walkers remains similar.
 
-### Final Position Density
+### Final Position Heatmap
 
 <img width="500" height="500" alt="snub_square_final_position_heatmap" src="https://github.com/user-attachments/assets/5d4891a1-893e-43e2-bd00-6e87508cbf40" />
 
@@ -1572,7 +1571,7 @@ The heatmap therefore provides another example of the geometry affecting the fin
 
 The average-distance results support this interpretation. Despite the irregularity in the final-position distribution, the average distance still follows an extremely strong power law with an exponent very close to $0.5$.
 
-This suggests that, once again, the non-uniform geometry may affect the **shape of the spatial distribution** more noticeably than it affects the fundamental relationship between distance and the number of steps.
+This suggests to me that, once again, the non-uniform geometry may affect the **shape of the spatial distribution** more noticeably than it affects the fundamental relationship between distance and the number of steps.
 
 ### Initial Findings
 
@@ -1592,9 +1591,9 @@ $$
 
 Although this is slightly below the theoretical value of $0.5$, the difference is small, and the extremely high \(R^2\) value of **0.99959** shows that the power-law relationship is an excellent fit to the data.
 
-The final-position density also shows some irregularity compared with the more symmetrical distributions produced by the uniform tilings. This suggests that the non-uniform geometry may have a greater effect on the spatial distribution of the walkers than on the fundamental relationship between distance and the number of steps.
+The final-position density also shows some irregularity compared with the more symmetrical distributions produced by the uniform tilings. This suggests to me that the non-uniform geometry may have a greater effect on the spatial distribution of the walkers than on the fundamental relationship between distance and the number of steps.
 
-The results therefore provide another indication that introducing non-uniformity into the tiling does not fundamentally alter the $\sqrt n$ scaling behaviour of a random walk.
+The results give another indication that introducing non-uniformity into the tiling does not fundamentally alter the $\sqrt n$ scaling behaviour of a random walk.
 
 The next non-uniform tiling I investigated was the **rhombitrihexagonal tiling**, providing another opportunity to test whether these observations remain consistent across different non-uniform geometries.
 
@@ -1602,9 +1601,9 @@ The next non-uniform tiling I investigated was the **rhombitrihexagonal tiling**
 
 The third non-uniform tiling I investigated was the **rhombitrihexagonal tiling**.
 
-Like the trihexagonal tiling, the rhombitrihexagonal tiling contains multiple types of polygons. In this case, the tiling contains triangles, squares and hexagons. This means that the local geometry encountered by the walker is no longer identical everywhere.
+Like the trihexagonal tiling, the rhombitrihexagonal tiling contains multiple types of polygons. In this case, the tiling contains triangles, squares and hexagons. This means that the walker no longer encounters exactly the same local geometry everywhere.
 
-This provides another test of whether introducing variation into the underlying geometry can affect the behaviour of a random walk.
+This gives another test of whether changing the local geometry actually affects the behaviour of the random walk.
 
 ### Average Distance vs Steps
 
@@ -1619,7 +1618,7 @@ The overall shape of the graph is very similar to the results from the uniform t
 
 This is another interesting result, as introducing non-uniformity into the geometry does not appear to have fundamentally changed the way the average distance grows.
 
-### Log-Log Average Distance
+### Log-Log Plot
 
 <img width="1000" height="600" alt="rhombitrihexagonal_loglog" src="https://github.com/user-attachments/assets/a758d7c3-a489-46e3-994b-98f72253a3f7" />
 
@@ -1667,9 +1666,9 @@ As with the uniform tilings, the mean is greater than the median due to the long
 
 The distribution also extends to distances of approximately **180 lattice units**, although only a very small number of walkers reached these distances.
 
-Overall, the distribution remains broadly similar to those produced by the uniform tilings, suggesting that the introduction of non-uniform geometry has not dramatically changed the range of distances reached by the walkers.
+Overall, the distribution remains broadly similar to those produced by the uniform tilings. This suggests that the introduction of non-uniform geometry has not dramatically changed the range of distances reached by the walkers.
 
-### Final Position Density
+### Final Position Heatmap
 
 <img width="500" height="500" alt="rhombitrihexagonal_final_position_heatmap" src="https://github.com/user-attachments/assets/4c10ed17-7e4a-4b58-9634-ddae9b5c2447" />
 
@@ -1684,9 +1683,9 @@ Another possibility is that the different local structures affect how easily wal
 
 However, this difference in shape does not appear to correspond to a major change in the overall scaling behaviour. The average-distance curve still follows an extremely strong power law with an exponent very close to $0.5$.
 
-###  Comparison
+### Comparison
 
-The most striking result is how similar the three tilings are despite having different local geometries. The trihexagonal tiling produces the largest average distance and the largest exponent, while the snub square tiling produces the smallest average distance and exponent. The rhombitrihexagonal tiling lies between them.
+The most striking result from comparing the three tilings is how similar they are despite having different local geometries. The trihexagonal tiling produces the largest average distance and the largest exponent, while the snub square tiling produces the smallest average distance and exponent. The rhombitrihexagonal tiling lies between them.
 
 |||
 |--|--|
@@ -1702,7 +1701,7 @@ $$
 
 
 
-This suggests that changing the local geometry of the non-uniform tiling changes the rate of spreading slightly, but does not fundamentally change the diffusive nature of the random walk. At large scales, the walkers appear to retain the same $\sqrt{n}$ behaviour as an ordinary random walk, despite moving across considerably more complicated geometries.
+This suggests to me that changing the local geometry of the non-uniform tiling changes the rate of spreading slightly, but does not fundamentally change the diffusive nature of the random walk. At large scales, the walkers appear to retain the same $\sqrt{n}$ behaviour as an ordinary random walk, despite moving across considerably more complicated geometries.
 
 ---
 
@@ -1750,7 +1749,7 @@ Once again, the results showed remarkably similar behaviour. The fitted power-la
 
 All three values are extremely close to the standard random-walk value of $0.5$. The fits were also extremely strong, with all three having $R^2 > 0.999$.
 
-This is particularly interesting because these tilings have considerably more complicated local structures than a standard square lattice. Despite this, the large-scale behaviour of the random walk remains almost unchanged.
+I found this particularly interesting because these tilings have considerably more complicated local structures than a standard square lattice. Despite this, the large-scale behaviour of the random walk remains almost unchanged.
 
 ### Comparing the Three Cases
 
