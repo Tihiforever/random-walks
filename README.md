@@ -1,4 +1,4 @@
-<img width="3000" height="1800" alt="snub_square_loglog" src="https://github.com/user-attachments/assets/a7960e28-db0d-4dca-94b4-3178fee38a12" /># Random Walks on Curved Surfaces
+# Random Walks on Curved Surfaces
 
 An exploration of Random Walks and how they are used and can be manipulated.
 
