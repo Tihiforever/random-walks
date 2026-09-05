@@ -1785,7 +1785,76 @@ This raises a further question: **does this behaviour continue when the space it
 
 The next possible extension of the investigation would therefore be to study random walks on genuinely curved surfaces, such as a sphere or other curved geometries. This would allow me to investigate whether the same large-scale behaviour survives when the underlying space is no longer flat.
 
+
 ---
+
+# Overall Conclusion and Reflection
+
+Having now investigated random walks on an unbounded plane, a finite torus, uniform tilings and non-uniform tilings, I can look back at the whole investigation and see how the different parts fit together.
+
+The main thing I originally wanted to understand was how changing the geometry of the space would affect the behaviour of a random walk. I started with a fairly simple question about how far a random walker would move after a given number of steps, but this ended up taking me much further than I originally expected.
+
+The first main result I found was the familiar
+
+$$
+r\propto\sqrt{n}.
+$$
+
+On an unbounded two-dimensional plane, the average distance from the starting point grows approximately like $\sqrt{n}$ rather than linearly with the number of steps. What I found really interesting was that this behaviour continued to appear when I changed the underlying geometry.
+
+The torus showed that the size of the space does matter. For small tori, the walkers quickly became affected by the finite size of the space and the average distance reached a plateau. As the torus became larger, this effect was delayed and the measured exponent approached the theoretical value of $0.5$. The size 200 torus gave an exponent of
+
+$$
+0.5004,
+$$
+
+which is almost exactly the value expected for an unbounded two-dimensional random walk.
+
+This led me to try and find a mathematical model for the effect of the finite torus. I proposed
+
+$$
+r(n,L)=CL\tanh\left(\frac{a\sqrt{n}}{L}\right),
+$$
+
+where $C$ and $a$ are constants that describe the behaviour of the walk, $n$ is the number of steps and $L$ is the size of the torus. I liked this model because it gives the two behaviours I was seeing in the simulations. For small $n$, the $\tanh$ term is approximately linear, giving the familiar $\sqrt{n}$ behaviour, while for large $n$ the function approaches a constant related to the size of the torus.
+
+I then wanted to see whether the $\sqrt{n}$ behaviour was specific to a square lattice. I tested different uniform tilings and then moved on to non-uniform tilings, where the local geometry changes across the space. Despite the increasingly complicated geometries, the results were surprisingly similar.
+
+The measured power-law exponents for the non-uniform tilings were
+
+| Tiling | Power-law exponent $\alpha$ |
+|---|---:|
+| Trihexagonal | 0.5141 |
+| Rhombitrihexagonal | 0.5074 |
+| Snub square | 0.4904 |
+
+All three are extremely close to the standard random-walk value of $0.5$. This suggests that changing the local geometry changes the exact behaviour of the walk slightly, but does not fundamentally change the relationship between distance and the number of steps.
+
+I think I now have a better idea of why this happens. A random walk can be thought of as the sum of many individual random steps,
+
+$$
+S_n=X_1+X_2+\dots+X_n.
+$$
+
+If the steps have no overall directional bias and have a finite variance, their variances add approximately linearly with $n$. This means that the variance of the total displacement grows like $n$, so the typical size of the displacement grows like
+
+$$
+\sqrt{n}.
+$$
+
+This is closely connected to the **Central Limit Theorem (CLT)**. The CLT says that when many independent random variables are added together, their combined distribution tends towards a normal distribution, even if the individual variables are not normally distributed. In the case of a random walk, the individual steps are random, but after many steps their combined effect produces a predictable distribution centred around the starting point. The standard deviation of this distribution grows like $\sqrt{n}$, which is why the typical distance of the walker also follows this scaling.
+
+This helps explain one of the things I found most interesting throughout the project: completely random local decisions can produce very predictable behaviour when viewed on a large enough scale. The exact geometry changes the details of the individual steps, but as long as the basic assumptions behind the CLT still hold, the overall statistical behaviour can remain surprisingly similar.
+
+This also helps explain what I was seeing when I changed the tilings. Changing the geometry changes the exact directions and local paths available to the walker, so it can change the constant factor in the relationship. However, the results suggest that it does not change the fundamental $\sqrt{n}$ scaling. The local geometry can therefore have an effect on the details of the walk without changing its large-scale behaviour.
+
+One of the things I found most interesting about this project was that the results were not always what I expected. I initially thought that making the geometry more complicated would lead to significantly different random-walk behaviour. Instead, the more complicated the tilings became, the more interesting it was that the same basic behaviour kept appearing.
+
+This made me realise that sometimes the interesting part of a mathematical problem is not finding a completely different result, but understanding why apparently different systems produce the same one. In this case, the geometry clearly affects the local behaviour of the walker, but at a large enough scale the same statistical behaviour seems to emerge.
+
+There are still many things I could investigate. For example, I would like to investigate whether the constants $C$ and $a$ in my torus model can be derived mathematically rather than fitted from simulations. I could also look at more unusual tilings, genuinely curved surfaces, or geometries where the assumptions behind the usual random-walk model no longer hold, and see whether the $\sqrt{n}$ behaviour eventually breaks down.
+
+For now, though, I think this is a natural place to finish the investigation. I started by trying to understand a simple random walk and ended up exploring probability, geometry, tilings, numerical simulation and a possible mathematical model for the behaviour I observed. More importantly, the project has left me with more questions than I started with, which is probably my favourite part of it.
 
 ## Sources
 
