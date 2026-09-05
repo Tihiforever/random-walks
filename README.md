@@ -1,4 +1,4 @@
-# Random Walks on Curved Surfaces
+# Random Walks
 
 An exploration of random walks and how changing the geometry they move through affects their behaviour. I started this project looking at a basic random walk and have gradually changed the space underneath it, from an unbounded plane to a torus and then to different regular and non-uniform tilings.
 
