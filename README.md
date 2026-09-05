@@ -44,7 +44,9 @@ An exploration of random walks and how changing the geometry they move through a
 
 **04/09/26** I used the code I had written and improved it with the use of AI to make the simulations run faster. This also helped me understand some better programming practices and how the code could be made more efficient. I then used this data to generate all the graphs needed for the write-up.
 
-**05/09/26** Started and finished the write-up of my findings, comparing the different types of tilings with a regular random walk.
+**05/09/26** Started and finished the write-up of my findings, comparing the different types of tilings with a regular random walk. 
+
+**06/09/26** Completed
 
 ---
 
