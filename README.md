@@ -1491,7 +1491,8 @@ This provides another test of whether changing the local structure of the underl
 
 ### Average Distance vs Steps
 
-<img width="1000" height="600" alt="snub_square_average_distance" src="https://github.com/user-attachments/assets/PLACEHOLDER" />
+<img width="1000" height="600" alt="snub_square_average_distance" src="https://github.com/user-attachments/assets/45d3e2b8-7a2b-464b-98b5-1f39796a57bd" />
+
 
 The average distance from the origin increases throughout the simulation, with no plateau as the tiling is unbounded and the walkers can continue moving away from the origin.
 
@@ -1503,7 +1504,8 @@ This provides further evidence that introducing non-uniformity into the geometry
 
 ### Log-Log Average Distance
 
-<img width="1000" height="600" alt="snub_square_loglog" src="https://github.com/user-attachments/assets/PLACEHOLDER" />
+<img width="1000" height="600" alt="rhombitrihexagonal_loglog" src="https://github.com/user-attachments/assets/24b63267-153f-41d0-ad56-e58b9e109548" />
+
 
 The log-log plot gives a power-law relationship of
 
@@ -1535,7 +1537,8 @@ Despite these differences, all three values remain very close to the standard ra
 
 ### Distribution of Final Distances
 
-<img width="1000" height="600" alt="snub_square_final_distribution" src="https://github.com/user-attachments/assets/PLACEHOLDER" />
+<img width="1000" height="600" alt="snub_square_final_distribution" src="https://github.com/user-attachments/assets/7e68af21-c22b-448f-811b-ac5c0f148a68" />
+
 
 The distribution of final distances is again right-skewed, with most walkers finishing relatively close to the origin and a smaller number travelling considerably further away.
 
@@ -1557,7 +1560,7 @@ Overall, the distribution remains broadly similar to those produced by the other
 
 ### Final Position Density
 
-<img width="500" height="500" alt="snub_square_final_position_heatmap" src="https://github.com/user-attachments/assets/PLACEHOLDER" />
+<img width="500" height="500" alt="snub_square_final_position_heatmap" src="https://github.com/user-attachments/assets/5d4891a1-893e-43e2-bd00-6e87508cbf40" />
 
 The final position density is concentrated around the origin, with the majority of walkers remaining within a central region.
 
@@ -1605,7 +1608,8 @@ This provides another test of whether introducing variation into the underlying 
 
 ### Average Distance vs Steps
 
-<img width="1000" height="600" alt="rhombitrihexagonal_average_distance" src="https://github.com/user-attachments/assets/rhombitrihexagonal_average_distance.png" />
+<img width="1000" height="600" alt="rhombitrihexagonal_average_distance" src="https://github.com/user-attachments/assets/1fe4cd48-df32-4587-8d30-18dcdffe5c50" />
+
 
 The average distance from the origin increases throughout the simulation, with no plateau as the tiling is unbounded and the walkers can continue moving away from the origin.
 
@@ -1617,7 +1621,8 @@ This is another interesting result, as introducing non-uniformity into the geome
 
 ### Log-Log Average Distance
 
-<img width="1000" height="600" alt="rhombitrihexagonal_loglog" src="https://github.com/user-attachments/assets/rhombitrihexagonal_loglog.png" />
+<img width="1000" height="600" alt="rhombitrihexagonal_loglog" src="https://github.com/user-attachments/assets/a758d7c3-a489-46e3-994b-98f72253a3f7" />
+
 
 The log-log plot gives a power-law relationship of
 
@@ -1641,7 +1646,8 @@ This is particularly interesting when compared with the uniform tilings. The tri
 
 ### Distribution of Final Distances
 
-<img width="1000" height="600" alt="rhombitrihexagonal_final_distribution" src="https://github.com/user-attachments/assets/rhombitrihexagonal_final_distribution.png" />
+<img width="1000" height="600" alt="rhombitrihexagonal_final_distribution" src="https://github.com/user-attachments/assets/959a6347-d8d9-4f5a-b383-0651ef7408d6" />
+
 
 The distribution of final distances is again right-skewed, with most walkers finishing relatively close to the origin and a smaller number travelling considerably further.
 
@@ -1665,7 +1671,8 @@ Overall, the distribution remains broadly similar to those produced by the unifo
 
 ### Final Position Density
 
-<img width="500" height="500" alt="rhombitrihexagonal_final_position_heatmap" src="https://github.com/user-attachments/assets/rhombitrihexagonal_final_position_heatmap.png" />
+<img width="500" height="500" alt="rhombitrihexagonal_final_position_heatmap" src="https://github.com/user-attachments/assets/4c10ed17-7e4a-4b58-9634-ddae9b5c2447" />
+
 
 The final position density is concentrated around the origin, with the majority of walkers remaining within a central region. However, unlike the heatmaps from the uniform tilings, the distribution is **not perfectly circular**.
 
@@ -1681,11 +1688,19 @@ However, this difference in shape does not appear to correspond to a major chang
 
 The most striking result is how similar the three tilings are despite having different local geometries. The trihexagonal tiling produces the largest average distance and the largest exponent, while the snub square tiling produces the smallest average distance and exponent. The rhombitrihexagonal tiling lies between them.
 
+|||
+|--|--|
+|<img width="1000" height="600" alt="comparison_average_distance" src="https://github.com/user-attachments/assets/188f5194-7f90-41fb-980a-72703605fe41" />|
+|<img width="1000" height="600" alt="comparison_loglog" src="https://github.com/user-attachments/assets/e12fdc66-8017-4891-875b-c01050389a0f" />|
+|<img width="800" height="600" alt="power_law_exponents" src="https://github.com/user-attachments/assets/06c7e7da-7d67-457e-adda-1a4b7f650e22" />|
+
 However, all three remain extremely close to the classical random-walk scaling relationship
 
 $$
 r \propto \sqrt{n}.
 $$
+
+
 
 This suggests that changing the local geometry of the non-uniform tiling changes the rate of spreading slightly, but does not fundamentally change the diffusive nature of the random walk. At large scales, the walkers appear to retain the same $\sqrt{n}$ behaviour as an ordinary random walk, despite moving across considerably more complicated geometries.
 
